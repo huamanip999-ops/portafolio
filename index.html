@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pablo Huamani | Propuesta 2 · Portafolio</title>
+<meta name="description" content="Portafolio de Pablo Huamani, diseñador gráfico publicitario. Identidad de marca, servicios con tarifas y un proceso de seis pasos, un solo hilo.">
+<meta name="theme-color" content="#1D1D1B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,800,900&f[]=gambetta@500,501&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+/* =========================================================
+   01 · TOKENS (3 colores del manual) + base
+   ========================================================= */
+:root{
+  --c:#1D1D1B; --p:#FFF9F0; --v:#FF4000;
+  --p70:rgba(255,249,240,.72); --p20:rgba(255,249,240,.2);
+  --c70:rgba(29,29,27,.74);   --c20:rgba(29,29,27,.2);
+  --sans:'Switzer','Archivo','Helvetica Neue',Arial,sans-serif;
+  --serif:'Gambetta','Fraunces','Iowan Old Style',Georgia,serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --pad:clamp(20px,4vw,64px); --max:1400px;
+  --cut:clamp(22px,3.2vw,46px); --gap:clamp(14px,1.6vw,24px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sans);font-size:clamp(1rem,.3vw + .95rem,1.125rem);line-height:1.5;color:var(--c);background:var(--p);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+ul,ol{list-style:none;margin:0;padding:0}
+h1,h2,h3,h4,p{margin:0}
+:focus-visible{outline:3px solid var(--v);outline-offset:3px}
+[data-theme="accent"] :focus-visible{outline-color:var(--c)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--v);color:var(--c);padding:.8rem 1.2rem;border-radius:999px;font-weight:800}
+.skip:focus{top:16px}
+.mono{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
+h1,h2,h3{font-weight:900;letter-spacing:-.035em;line-height:.98}
+h1 em,h2 em,h3 em,.ital{font-family:var(--serif);font-style:italic;font-weight:500;letter-spacing:-.01em;color:var(--v)}
+[data-theme="accent"] h2 em,[data-theme="accent"] .ital{color:var(--c)}
+h2{font-size:clamp(2.3rem,5.4vw,5rem)}
+h3{font-size:clamp(1.3rem,2vw,1.8rem);line-height:1.05;letter-spacing:-.025em}
+.lead{font-size:clamp(1.05rem,1vw + .85rem,1.4rem);line-height:1.42;max-width:32em}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+.sec{position:relative;padding-block:clamp(72px,10vw,150px)}
+[data-theme="dark"]{background:var(--c);color:var(--p)}
+[data-theme="light"]{background:var(--p);color:var(--c)}
+[data-theme="accent"]{background:var(--v);color:var(--c)}
+.cut{clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%)}
+.cut-bl{clip-path:polygon(0 0,100% 0,100% 100%,var(--cut) 100%,0 calc(100% - var(--cut)))}
+
+.pill{display:inline-flex;align-items:center;gap:.55em;padding:.55em 1.05em;border-radius:999px;font-weight:800;font-size:.88rem;line-height:1;white-space:nowrap;border:2px solid currentColor}
+.pill.solid-c{background:var(--c);color:var(--p);border-color:var(--c)}
+.pill.solid-p{background:var(--p);color:var(--c);border-color:var(--p)}
+.pill.solid-v{background:var(--v);color:var(--c);border-color:var(--v)}
+.pill .dot{width:.6em;height:.6em;border-radius:50%;background:var(--v)}
+.tag{font-family:var(--mono);font-weight:500;font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;padding:.6em .9em}
+.btn{display:inline-flex;align-items:center;gap:1rem;padding:.5rem .5rem .5rem 1.6rem;border-radius:999px;font-weight:800;font-size:1.05rem;line-height:1;border:2px solid transparent;transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .2s,color .2s}
+.btn .ar{width:2.5rem;height:2.5rem;border-radius:50%;display:grid;place-items:center;flex:none;transition:transform .25s}
+.btn .ar svg{width:1.3rem;height:1.3rem}
+.btn:hover{transform:translateY(-2px)}.btn:hover .ar{transform:translateX(3px)}
+.btn-v{background:var(--v);color:var(--c)}.btn-v .ar{background:var(--c);color:var(--p)}
+.btn-c{background:var(--c);color:var(--p)}.btn-c .ar{background:var(--v);color:var(--c)}
+.btn-p{background:var(--p);color:var(--c)}.btn-p .ar{background:var(--c);color:var(--p)}
+.btn-o{border-color:currentColor;padding-right:1.6rem}.btn-o .ar{display:none}
+.btn-o:hover{background:var(--p);color:var(--c);border-color:var(--p)}
+[data-theme="light"] .btn-o:hover{background:var(--c);color:var(--p);border-color:var(--c)}
+.ic{width:1.5rem;height:1.5rem;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter}
+
+.sec-head{display:grid;grid-template-columns:1fr auto;gap:1rem 2rem;align-items:end;border-bottom:2px solid currentColor;padding-bottom:clamp(16px,2vw,26px);margin-bottom:clamp(34px,5vw,64px)}
+.sec-head .lab{grid-column:1 / -1;display:flex;align-items:center;gap:.8rem}
+.sec-head .lab b{background:var(--v);color:var(--c);font-weight:700;padding:.3em .7em;border-radius:999px}
+[data-theme="accent"] .sec-head .lab b{background:var(--c);color:var(--p)}
+.sec-head .lab::after{content:"";height:2px;width:2.4rem;background:currentColor}
+.sec-head p.r{max-width:24em;font-size:.98rem;text-align:right}
+.js .rv{transform:translateY(26px);opacity:0;transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .8s}
+.js .rv.in{transform:none;opacity:1}
+.js .rv.d1{transition-delay:.08s}.js .rv.d2{transition-delay:.16s}.js .rv.d3{transition-delay:.24s}
+
+/* =========================================================
+   02 · NAV, MENÚ, RIEL DEL HILO
+   ========================================================= */
+.nav{position:fixed;inset:14px 0 auto 0;z-index:60;pointer-events:none;padding-inline:var(--pad)}
+.nav-pill{pointer-events:auto;max-width:calc(var(--max) - 2*var(--pad));margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--c);color:var(--p);border-radius:999px;padding:.5rem .5rem .5rem 1.5rem;border:2px solid var(--c);transition:background-color .3s,color .3s,border-color .3s}
+.nav[data-theme="dark"] .nav-pill{background:var(--p);color:var(--c);border-color:var(--p)}
+.nav .logo{display:block;width:92px;flex:none}.nav .logo svg{width:100%;height:auto;fill:currentColor}
+.nav ul{display:flex;gap:.2rem}
+.nav ul a{display:block;padding:.65rem 1rem;border-radius:999px;font-size:.92rem;font-weight:500;transition:background-color .2s,color .2s}
+.nav ul a:hover{background:var(--p);color:var(--c)}
+.nav[data-theme="dark"] ul a:hover{background:var(--c);color:var(--p)}
+.nav ul a[aria-current="true"]{font-weight:800;text-decoration:underline;text-decoration-color:var(--v);text-decoration-thickness:3px;text-underline-offset:6px}
+.nav-cta{display:inline-flex;background:var(--v);color:var(--c);font-weight:800;font-size:.92rem;padding:.8rem 1.4rem;border-radius:999px;transition:transform .2s}
+.nav-cta:hover{transform:scale(1.04)}
+.nav[data-theme="accent"] .nav-cta{background:var(--p)}
+.nav-r{display:flex;align-items:center;gap:.4rem}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:2px solid currentColor;place-items:center}
+.menu{position:fixed;inset:0;z-index:55;background:var(--c);color:var(--p);padding:110px var(--pad) 40px;display:flex;flex-direction:column;justify-content:space-between}
+.menu[hidden]{display:none}
+.menu ol{counter-reset:m}
+.menu li{border-bottom:2px solid var(--p)}
+.menu li a{display:flex;align-items:baseline;gap:1rem;padding:1rem 0;font-size:clamp(2rem,9vw,3.4rem);font-weight:900;letter-spacing:-.035em}
+.menu li a::before{counter-increment:m;content:"0" counter(m);font-family:var(--mono);font-weight:500;color:var(--v);font-size:1rem}
+@media(max-width:900px){.nav ul{display:none}.burger{display:grid}.nav .logo{width:80px}}
+
+.progress{position:fixed;left:0;top:0;height:4px;width:100%;background:var(--v);transform-origin:left;transform:scaleX(var(--prog,0));z-index:70}
+.rail{position:fixed;left:14px;top:50%;transform:translateY(-50%);z-index:50;display:none;flex-direction:column;gap:0;background:var(--c);border:2px solid var(--p);border-radius:999px;padding:12px 6px}
+.rail::before{content:"";position:absolute;left:50%;top:26px;bottom:26px;width:2px;margin-left:-1px;background:var(--p20)}
+.rail::after{content:"";position:absolute;left:50%;top:26px;width:2px;margin-left:-1px;background:var(--v);height:calc((100% - 52px) * var(--prog,0))}
+.rail a{position:relative;z-index:1;width:30px;height:30px;margin-block:10px;border-radius:50%;background:var(--c);border:2px solid var(--p);color:var(--p);display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:.68rem;transition:background-color .2s,color .2s,border-color .2s}
+.rail a:hover{background:var(--p);color:var(--c)}
+.rail a[aria-current="true"]{background:var(--v);border-color:var(--v);color:var(--c)}
+.rail a span{position:absolute;left:calc(100% + 12px);top:50%;transform:translateY(-50%);background:var(--c);color:var(--p);border:2px solid var(--p);padding:.35rem .7rem;border-radius:999px;font-family:var(--sans);font-weight:800;font-size:.78rem;white-space:nowrap;display:none}
+.rail a:hover span,.rail a:focus-visible span{display:block}
+@media(min-width:1500px){.rail{display:flex}}
+
+/* =========================================================
+   03 · EL HILO (componente compartido: hero y proceso)
+   ========================================================= */
+.hilo{position:relative}
+.hilo svg.thread{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;display:none}
+.thread .base{stroke:var(--p20);stroke-width:2;fill:none}
+.thread .hebra{stroke:var(--v);stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.thread .punta{fill:var(--v);opacity:0}
+.hilo.go .hebra{animation:trazo 2.8s cubic-bezier(.6,.05,.2,1) .2s forwards}
+.hilo.go .punta{animation:aparece .3s ease 2.9s forwards}
+@keyframes trazo{to{stroke-dashoffset:0}}@keyframes aparece{to{opacity:1}}
+.nodo{width:52px;height:52px;border-radius:50%;background:var(--c);border:3px solid var(--v);display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:1.05rem;color:var(--p);transition:background-color .25s,color .25s,transform .25s;position:relative;z-index:2}
+.paso{position:relative}
+.paso .t{font-family:var(--mono);font-weight:500;font-size:.85rem;color:var(--v);display:inline-block;padding:.4rem .65rem;border:1.5px solid var(--v);margin-bottom:1rem}
+.paso h3{font-weight:800;font-size:clamp(1.4rem,1.9vw,2rem);line-height:1.02;letter-spacing:-.02em;margin-bottom:.8rem}
+.paso p{color:var(--p70);margin-bottom:1.2rem;font-size:clamp(.95rem,.8vw + .5rem,1.1rem);line-height:1.38}
+.paso ul{border-top:1px solid var(--p20);padding-top:.9rem}
+.paso li{position:relative;padding-left:1.2rem;margin-bottom:.5rem;font-size:.98rem;line-height:1.3}
+.paso li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;background:var(--v)}
+.paso:hover .nodo,.paso:focus-within .nodo{background:var(--v);color:var(--c);transform:scale(1.12)}
+/* vertical (móvil / tablet) */
+.hilo .vline{position:absolute;left:23px;top:26px;bottom:26px;width:6px;background:var(--v);border-radius:3px;transform:scaleY(0);transform-origin:top}
+.hilo::before{content:"";position:absolute;left:25px;top:26px;bottom:26px;width:2px;background:var(--p20)}
+.hilo.go .vline{animation:baja 2.2s cubic-bezier(.6,.05,.2,1) .2s forwards}
+@keyframes baja{to{transform:scaleY(1)}}
+.pasos{display:grid;gap:clamp(30px,5vw,48px)}
+.pasos .paso{padding-left:84px}
+.pasos .paso .nodo{position:absolute;left:0;top:0}
+
+/* =========================================================
+   04 · HERO
+   ========================================================= */
+.hero{padding-top:clamp(104px,12vw,150px);padding-bottom:clamp(48px,6vw,90px);overflow:hidden}
+.hero-top{display:flex;justify-content:space-between;gap:2rem;align-items:flex-start;margin-bottom:clamp(20px,3vw,44px)}
+.hero-top .mono{color:var(--p70);max-width:26em;line-height:1.7}
+.hero-top .meta{text-align:right;font-family:var(--mono);font-size:.85rem;line-height:1.7;color:var(--p70)}
+.hero-top .meta b{display:block;font-family:var(--sans);font-weight:900;font-size:clamp(1.8rem,3.4vw,3.4rem);line-height:1;letter-spacing:-.03em;color:var(--p);margin-bottom:.5rem}
+.hero h1{font-size:clamp(3.2rem,10.5vw,10.4rem);line-height:.9;letter-spacing:-.045em}
+.hero h1 span{display:block;font-size:.4em;letter-spacing:-.03em;line-height:1.02;margin-top:.3em;max-width:14em}
+.hero-row{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);margin-top:clamp(24px,3vw,44px);align-items:end}
+.hero-row .lead{grid-column:1 / span 6;color:var(--p70)}
+.hero-ctas{grid-column:8 / span 5;display:flex;flex-wrap:wrap;gap:.8rem;justify-content:flex-end}
+.hero .hilo{margin-top:clamp(48px,7vw,100px)}
+.hilo--hero .pasos .paso p{min-height:0}
+@media(min-width:780px){
+  .hilo--hero{padding-top:140px}
+  .hilo--hero svg.thread{display:block}
+  .hilo--hero::before,.hilo--hero .vline{display:none}
+  .hilo--hero .pasos{grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+  .hilo--hero .pasos .paso{padding:76px clamp(12px,3vw,48px) 0 0}
+  .hilo--hero .pasos .paso .nodo{position:absolute;left:0;top:0;margin-left:-26px}
+  .hilo--hero .pasos{position:relative}
+}
+
+/* =========================================================
+   05 · SOBRE MÍ
+   ========================================================= */
+.about{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);align-items:start}
+.portrait{grid-column:1 / span 4;position:sticky;top:100px}
+.portrait .ph{background:var(--v);aspect-ratio:4/5;position:relative;overflow:hidden}
+.portrait .ph svg{position:absolute;inset:0;width:100%;height:100%}
+.portrait .cap{position:absolute;left:14px;bottom:14px}
+.portrait .stamp{margin-top:var(--gap);display:flex;align-items:center;gap:.9rem;border:2px solid var(--c);border-radius:999px;padding:.4rem 1.2rem .4rem .4rem;font-weight:800;font-size:.92rem;line-height:1.2}
+.portrait .stamp .ico{width:2.8rem;height:2.8rem;border-radius:12px;background:var(--v);display:grid;place-items:center;flex:none}
+.portrait .stamp .ico svg{width:1.7rem;fill:var(--c)}
+.about-copy{grid-column:6 / span 7;display:flex;flex-direction:column;gap:clamp(20px,2.4vw,32px)}
+.about-copy .big{font-size:clamp(2rem,4.4vw,4rem);font-weight:900;letter-spacing:-.04em;line-height:1}
+.about-copy p{max-width:34em;color:var(--c70)}
+.about-copy p.big{color:var(--c);max-width:none}
+.enfoque{display:grid;gap:0;border-top:2px solid var(--c)}
+.enfoque li{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.4rem;padding:1.1rem 0;border-bottom:2px solid var(--c)}
+.enfoque .mono{color:var(--c);font-weight:700;grid-row:1 / span 2;padding-top:.3rem}
+.enfoque h4{font-size:clamp(1.2rem,1.6vw,1.5rem);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin:0}
+.enfoque p{font-size:.98rem}
+.skills{display:flex;flex-wrap:wrap;gap:.5rem}
+.skills .pill{font-size:.82rem;transition:background-color .2s,color .2s}
+.skills .pill:hover{background:var(--c);color:var(--p)}
+.voz{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.voz div{background:var(--c);color:var(--p);padding:1rem 1.1rem;font-weight:900;letter-spacing:-.03em;font-size:clamp(1rem,1.5vw,1.3rem);line-height:1.1}
+.voz div em{font-size:.9em}
+
+/* =========================================================
+   06 · PORTAFOLIO (índice editorial + vista previa)
+   ========================================================= */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:clamp(20px,3vw,36px);align-items:center}
+.filters .mono{margin-right:.6rem}
+.filters button.pill{transition:background-color .2s,color .2s,border-color .2s}
+.filters button.pill:hover{background:var(--p);color:var(--c)}
+.filters button.pill[aria-pressed="true"]{background:var(--v);border-color:var(--v);color:var(--c)}
+.filters .count{margin-left:auto}.filters .count b{color:var(--v)}
+.work{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);align-items:start}
+.idx{grid-column:1 / span 7;border-top:2px solid var(--p)}
+.idx li.is-out{display:none}
+.row{width:100%;display:grid;grid-template-columns:3.2rem 1fr auto auto;gap:1rem;align-items:center;padding:clamp(16px,1.9vw,26px) 0;border-bottom:2px solid var(--p);text-align:left;transition:background-color .25s,color .25s,padding .25s}
+.row .n{font-family:var(--mono);font-weight:700;font-size:.85rem;color:var(--v)}
+.row .nm{font-weight:900;font-size:clamp(1.7rem,3.6vw,3.3rem);letter-spacing:-.04em;line-height:1}
+.row .nm small{display:block;font-weight:500;font-size:.9rem;letter-spacing:0;line-height:1.35;margin-top:.5rem;color:var(--p70);max-width:30em}
+.row .nm em{font-size:1em}
+.row .ct{justify-self:end}
+.row .go{width:3rem;height:3rem;border-radius:50%;background:var(--p);color:var(--c);display:grid;place-items:center;transition:transform .3s,background-color .2s,color .2s}
+.row .go svg{width:1.4rem;height:1.4rem}
+.row .th{display:none}
+.row:hover,.row:focus-visible,.row.on{background:var(--p);color:var(--c);padding-inline:clamp(12px,1.6vw,22px)}
+.row:hover .nm small,.row:focus-visible .nm small,.row.on .nm small{color:var(--c70)}
+.row:hover .go,.row:focus-visible .go,.row.on .go{background:var(--v);color:var(--c);transform:rotate(-45deg)}
+.prev{grid-column:9 / span 4;position:sticky;top:100px}
+.prev .art{aspect-ratio:1/1}
+.prev .art svg{position:absolute;inset:0;width:100%;height:100%;display:none}
+.prev .art svg.on{display:block;animation:fade .45s ease}
+@keyframes fade{from{transform:scale(1.04)}to{transform:none}}
+.art{position:relative;overflow:hidden;background:var(--c)}
+.prev .lbl{display:flex;justify-content:space-between;margin-top:.9rem}
+.more{display:flex;justify-content:flex-start;margin-top:clamp(28px,4vw,48px)}
+
+dialog.case{border:0;padding:0;background:var(--c);color:var(--p);width:min(1180px,calc(100vw - 24px));max-height:calc(100svh - 24px);overflow:auto;margin:auto}
+dialog.case::backdrop{background:var(--c)}
+.case-in{display:grid;grid-template-columns:repeat(12,1fr);min-height:min(720px,calc(100svh - 24px))}
+.case-art{grid-column:1 / span 6;background:var(--c);display:flex;flex-direction:column;justify-content:space-between}
+.case-art .box{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--v)}
+.case-art .box svg{position:absolute;inset:0;width:100%;height:100%}
+.case-art .cap{padding:1rem clamp(18px,2vw,28px);border-top:2px solid var(--p)}
+.case-txt{grid-column:7 / span 6;padding:clamp(22px,3vw,44px);display:flex;flex-direction:column;gap:1.3rem}
+.case-top{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.case-x{display:inline-flex;align-items:center;gap:.6rem;border:2px solid var(--p);border-radius:999px;padding:.55rem 1rem;font-weight:800;font-size:.9rem;transition:background-color .2s,color .2s}
+.case-x:hover{background:var(--p);color:var(--c)}.case-x svg{width:1.1rem;height:1.1rem}
+.case-txt h3{font-size:clamp(2.2rem,4vw,3.6rem)}
+.case-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;border-block:2px solid var(--p);padding-block:1rem;margin:0}
+.case-meta dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}
+.case-meta dd{margin:.25rem 0 0;font-weight:800;font-size:.95rem;line-height:1.25}
+.case-blk h4{font-family:var(--mono);font-weight:500;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--v);margin:0 0 .4rem}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.kpis div{background:var(--p);color:var(--c);padding:.9rem 1rem}
+.kpis b{display:block;font-size:1.9rem;line-height:1;letter-spacing:-.04em;font-weight:900}
+.kpis span{font-size:.78rem;font-weight:800;line-height:1.2;display:block;margin-top:.35rem}
+.case-nav{margin-top:auto;display:flex;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
+.case-nav .btn{font-size:.95rem}.case-note{font-size:.78rem;color:var(--p70)}
+
+/* =========================================================
+   07 · SERVICIOS Y TARIFAS
+   ========================================================= */
+.cur{display:inline-flex;border:2px solid var(--c);border-radius:999px;padding:3px;gap:3px;margin-bottom:clamp(22px,3vw,36px)}
+.cur button{padding:.5rem 1rem;border-radius:999px;font-weight:800;font-size:.85rem;transition:background-color .2s,color .2s}
+.cur button[aria-pressed="true"]{background:var(--v);color:var(--c)}
+.group-h{display:flex;align-items:baseline;gap:1rem;margin-bottom:clamp(16px,2vw,26px)}
+.group-h h3{font-size:clamp(1.6rem,2.6vw,2.4rem)}
+.group-h .mono{color:var(--c);font-weight:700}
+.queresuelve{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-bottom:clamp(22px,3vw,40px)}
+.queresuelve li{border-top:2px solid var(--c);padding-top:.9rem}
+.queresuelve b{font-family:var(--mono);font-weight:700;font-size:.8rem;color:var(--c);display:block;margin-bottom:.4rem}
+.queresuelve h4{font-size:1.1rem;font-weight:900;letter-spacing:-.025em;margin:0 0 .35rem;line-height:1.1}
+.queresuelve p{font-size:.92rem;color:var(--c70)}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.plan{padding:clamp(22px,2.6vw,40px);display:flex;flex-direction:column;gap:1.2rem;position:relative}
+.plan.feat{background:var(--v);color:var(--c)}
+.plan.base{background:var(--c);color:var(--p)}
+.plan:nth-child(odd){clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%)}
+.plan:nth-child(even){clip-path:polygon(0 0,100% 0,100% 100%,var(--cut) 100%,0 calc(100% - var(--cut)))}
+.plan .top{display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.plan .top .tag{border:2px solid currentColor;color:inherit}
+.plan h3{font-size:clamp(2rem,3.6vw,3.4rem);letter-spacing:-.04em}
+.plan.feat h3 em{color:var(--c)}
+.plan .desc{font-size:1.02rem;max-width:28em}
+.pr{display:flex;flex-direction:column;line-height:1}
+.pr .l{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.4rem}
+.pr .m{font-weight:900;font-size:clamp(2.6rem,4.8vw,4.6rem);letter-spacing:-.05em}
+.pr .a{font-family:var(--mono);font-size:.85rem;margin-top:.5rem}
+.plan .plazo{display:inline-flex;align-self:flex-start;border:2px solid currentColor;border-radius:999px;padding:.5rem 1rem;font-weight:800;font-size:.9rem}
+.plan h4,.add h4{font-family:var(--mono);font-weight:500;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;margin:0}
+.incl{display:grid;grid-template-columns:1fr 1fr;gap:.2rem 1.4rem;border-top:2px solid currentColor;padding-top:.9rem;counter-reset:i}
+.incl li{display:flex;gap:.7rem;padding:.45rem 0;font-weight:500;font-size:.96rem;line-height:1.25;counter-increment:i}
+.incl li::before{content:"0" counter(i);font-family:var(--mono);font-weight:700;font-size:.75rem;padding-top:.15rem}
+.plan.feat .incl li::before{color:var(--c)}.plan.base .incl li::before{color:var(--v)}
+.plan .cond{font-size:.85rem;font-weight:800;border-top:2px solid currentColor;padding-top:.8rem}
+.plan .cond b{font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.06em;margin-right:.5rem}
+.adds{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.add{background:var(--c);color:var(--p);border:2px solid var(--c);padding:clamp(18px,2vw,30px);display:flex;flex-direction:column;gap:1rem;transition:background-color .25s,color .25s,border-color .25s}
+.add:hover{background:var(--v);color:var(--c);border-color:var(--v)}
+.add h3{font-size:clamp(1.5rem,2.2vw,2.1rem)}
+.add .tg{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.add .tg .tag{border:2px solid currentColor}
+.add .sub{color:var(--p70);font-size:.98rem;min-height:3em;transition:color .25s}.add:hover .sub{color:var(--c)}
+.add .pr .m{font-size:clamp(2rem,3.2vw,3rem)}
+.add ul{border-top:2px solid currentColor;padding-top:.8rem}
+.add li{position:relative;padding:.35rem 0 .35rem 1.2rem;font-size:.96rem;line-height:1.25}
+.add li::before{content:"";position:absolute;left:0;top:.8em;width:8px;height:8px;background:var(--v)}
+.disc{margin-top:clamp(22px,3vw,36px);display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center;background:var(--v);color:var(--c);padding:clamp(16px,2vw,26px) clamp(18px,2.4vw,34px)}
+.disc p{font-weight:900;font-size:clamp(1.2rem,2.2vw,1.9rem);letter-spacing:-.03em;line-height:1.1;max-width:24em}
+.disc p em{color:var(--c)}
+.disc small{font-size:.88rem;font-weight:800;max-width:22em}
+.sv-gap{margin-top:clamp(40px,6vw,84px)}
+
+/* =========================================================
+   08 · PROCESO + condiciones + FAQ
+   ========================================================= */
+.proc-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.2rem 3rem;align-items:flex-end;margin-bottom:clamp(30px,4vw,56px)}
+.proc-head .lead{color:var(--p70)}
+.proc-head .meta{text-align:right;font-family:var(--mono);font-size:.85rem;line-height:1.7;color:var(--p70)}
+.proc-head .meta b{display:block;font-family:var(--sans);font-weight:900;font-size:clamp(2rem,4vw,4rem);line-height:1;letter-spacing:-.04em;color:var(--p);margin-bottom:.4rem}
+@media(min-width:1180px){
+  .hilo--proc{padding-top:140px}
+  .hilo--proc svg.thread{display:block}
+  .hilo--proc::before,.hilo--proc .vline{display:none}
+  .hilo--proc .pasos{grid-template-columns:repeat(6,1fr);gap:var(--gap)}
+  .hilo--proc .pasos .paso{padding:76px clamp(8px,1.2vw,22px) 0 0}
+  .hilo--proc .pasos .paso .nodo{margin-left:-26px}
+  .hilo--proc .paso::before{content:"";position:absolute;left:-1px;top:52px;width:2px;height:24px;background:var(--p20)}
+  .hilo--proc .pasos{grid-auto-rows:auto}
+  .hilo--proc .pasos .paso{display:grid;grid-row:span 4;grid-template-rows:subgrid;align-content:start}
+  .hilo--proc .pasos .paso .t{justify-self:start;align-self:start}
+  .hilo--proc .pasos .paso h3{margin-bottom:.8rem}
+}
+.proc-note{margin-top:clamp(24px,3vw,40px);border:2px solid var(--p);border-radius:999px;padding:.8rem 1.4rem;display:inline-flex;gap:.8rem;font-weight:800;font-size:.95rem;align-items:center}
+.proc-note .dot{width:.7rem;height:.7rem;background:var(--v);border-radius:50%;flex:none}
+.before{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);margin-top:clamp(56px,8vw,120px);align-items:start}
+.condw{grid-column:1 / span 6}
+.faq{grid-column:8 / span 5}
+.before h3{font-size:clamp(1.8rem,3vw,2.8rem);margin-bottom:clamp(16px,2vw,26px)}
+.cnd{border-top:2px solid var(--p)}
+.cnd li{display:grid;grid-template-columns:7rem 1fr;gap:.3rem 1.2rem;padding:1rem 0;border-bottom:2px solid var(--p)}
+.cnd .mono{color:var(--v);font-weight:700;padding-top:.15rem}
+.cnd b{font-weight:800;display:block}
+.cnd span{color:var(--p70);font-size:.94rem;display:block;margin-top:.2rem}
+details{border-top:2px solid var(--p)}
+details:last-of-type{border-bottom:2px solid var(--p)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1rem 0;font-weight:800;font-size:1.05rem;line-height:1.25}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:1.6rem;height:1.6rem;position:relative;border:2px solid var(--v);border-radius:50%;transition:transform .3s,background-color .2s}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;background:var(--v);width:10px;height:2px;margin:-1px 0 0 -5px;transition:background-color .2s}
+summary i::after{transform:rotate(90deg)}
+details[open] summary i{transform:rotate(45deg);background:var(--v)}
+details[open] summary i::before,details[open] summary i::after{background:var(--c)}
+details p{padding:0 2.6rem 1.1rem 0;color:var(--p70);font-size:.98rem}
+summary:hover{color:var(--v)}
+
+/* =========================================================
+   09 · CONTACTO
+   ========================================================= */
+.contact-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);align-items:stretch}
+.contact-copy{grid-column:1 / span 7;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(26px,4vw,52px)}
+.contact-copy .q{font-size:clamp(2.4rem,6vw,5.6rem);font-weight:900;letter-spacing:-.045em;line-height:.95}
+.contact-copy .lead{margin-top:1.4rem}
+.ct-row{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+.mail{display:inline-flex;font-weight:900;font-size:clamp(1.05rem,1.8vw,1.5rem);letter-spacing:-.03em;border-bottom:3px solid var(--c);padding-bottom:.2rem;word-break:break-all}
+.mail:hover{background:var(--c);color:var(--p)}
+.socials{display:flex;flex-wrap:wrap;gap:.5rem}
+.socials .pill{font-size:.9rem;transition:background-color .2s,color .2s}
+.socials .pill:hover{background:var(--c);color:var(--v)}
+.socials .pill svg{width:1rem;height:1rem}
+.form-card{grid-column:8 / span 5;background:var(--p);color:var(--c);padding:clamp(20px,2.6vw,38px);display:flex;flex-direction:column;gap:1.1rem}
+.form-card h3{font-size:clamp(1.6rem,2.6vw,2.3rem)}
+.form-card form{display:flex;flex-direction:column;gap:1.1rem}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+legend,.f label.t{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:0;margin-bottom:.55rem;display:block}
+.opts{display:flex;flex-wrap:wrap;gap:.45rem}.opts label{cursor:pointer}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts span{display:inline-flex;padding:.55em 1em;border:2px solid var(--c);border-radius:999px;font-weight:800;font-size:.82rem;line-height:1;transition:background-color .2s,color .2s}
+.opts input:checked + span{background:var(--c);color:var(--p)}
+.opts input:focus-visible + span{outline:3px solid var(--v);outline-offset:2px}
+.opts span:hover{background:var(--v);border-color:var(--v)}
+.f input[type=email],.f textarea{width:100%;font:inherit;font-size:1rem;color:var(--c);background:var(--p);border:2px solid var(--c);border-radius:999px;padding:.85rem 1.2rem}
+.f textarea{border-radius:20px;resize:vertical;min-height:96px}
+.f input:focus,.f textarea:focus{outline:2px solid var(--v);outline-offset:0;border-color:var(--v)}
+.f.err input{border-color:var(--v);outline:2px solid var(--v)}
+.f .msg{display:none;margin-top:.45rem;font-weight:800;font-size:.85rem;align-items:center;gap:.5rem}
+.f.err .msg{display:flex}
+.f .msg::before{content:"";width:.8rem;height:.8rem;background:var(--v);flex:none}
+.form-ok{display:none;flex-direction:column;gap:1rem}
+.form-card.sent form{display:none}.form-card.sent .form-ok{display:flex}
+.form-ok .chk{width:3.4rem;height:3.4rem;background:var(--v);display:grid;place-items:center;border-radius:50%}
+.form-ok .chk svg{width:1.7rem;height:1.7rem}
+.small{font-size:.82rem}
+
+/* =========================================================
+   10 · FOOTER
+   ========================================================= */
+footer{position:relative;overflow:hidden;background:var(--c);color:var(--p);padding-block:clamp(56px,7vw,100px) 28px}
+.f-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
+.f-brand{grid-column:1 / span 5;display:flex;flex-direction:column;gap:1.6rem;align-items:flex-start}
+.f-brand .logo{width:clamp(180px,22vw,280px)}.f-brand .logo svg{width:100%;height:auto;fill:var(--p)}
+.f-brand p{font-size:clamp(1.3rem,2.2vw,1.9rem);font-weight:900;letter-spacing:-.035em;line-height:1.08;max-width:14em}
+.f-col{grid-column:span 2}.f-nav{grid-column:7 / span 2}
+.f-col h4{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--v);margin:0 0 1rem}
+.f-col li + li{margin-top:.5rem}
+.f-col a{font-weight:500;border-bottom:2px solid transparent;transition:border-color .2s}
+.f-col a:hover{border-color:var(--v)}
+.f-strip{position:relative;height:clamp(110px,15vw,220px);overflow:hidden;margin-top:clamp(40px,6vw,80px);color:var(--v)}
+.f-strip svg{position:absolute;left:50%;top:50%;width:min(1180px,78%);height:auto;transform:translate(-50%,-50%);fill:currentColor}
+.f-bottom{margin-top:clamp(24px,3vw,40px);border-top:2px solid var(--p);padding-top:1.2rem;display:flex;flex-wrap:wrap;gap:.8rem 2rem;justify-content:space-between;align-items:center;font-size:.85rem}
+.up{display:inline-flex;align-items:center;gap:.6rem;font-weight:800;border:2px solid var(--p);border-radius:999px;padding:.55rem 1.1rem;transition:background-color .2s,color .2s}
+.up:hover{background:var(--p);color:var(--c)}.up svg{width:1.1rem;height:1.1rem}
+
+/* =========================================================
+   11 · HERRAMIENTAS DEL WIREFRAME
+   ========================================================= */
+.tools{position:fixed;left:14px;bottom:14px;z-index:80;display:flex;gap:.4rem;flex-wrap:wrap}
+.tools button{background:var(--c);color:var(--p);border:2px solid var(--p);border-radius:999px;padding:.6rem 1rem;font-weight:800;font-size:.78rem;display:inline-flex;gap:.55rem;align-items:center}
+.tools button[aria-pressed="true"]{background:var(--v);color:var(--c);border-color:var(--c)}
+.tools button i{width:.65rem;height:.65rem;border-radius:50%;background:var(--v)}
+.tools button[aria-pressed="true"] i{background:var(--c)}
+.note{display:none;position:absolute;left:var(--pad);top:clamp(70px,8vw,96px);z-index:20;max-width:min(560px,calc(100% - 2*var(--pad)));background:var(--v);color:var(--c);font-size:.78rem;font-weight:800;line-height:1.35;padding:.7rem 1rem;pointer-events:none}
+.note b{display:block;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.2rem}
+[data-theme="accent"] .note{background:var(--c);color:var(--p)}
+body.show-notes .note{display:block}
+.hero .note{top:auto;bottom:16px}
+.gridov{position:fixed;inset:0;z-index:70;pointer-events:none;display:none}
+body.show-grid .gridov{display:block}
+.gridov .wrap{height:100%}.gridov .cols{height:100%;display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
+.gridov .cols i{border-inline:1px solid var(--v);display:block}
+.toast{position:fixed;left:50%;bottom:72px;transform:translate(-50%,20px);background:var(--v);color:var(--c);font-weight:800;padding:.8rem 1.3rem;border-radius:999px;z-index:90;transition:transform .3s,opacity .3s;opacity:0;pointer-events:none}
+.toast.on{transform:translate(-50%,0);opacity:1}
+
+/* =========================================================
+   12 · RESPONSIVE
+   ========================================================= */
+@media(max-width:1100px){
+  .hero-row .lead{grid-column:1 / -1}.hero-ctas{grid-column:1 / -1;justify-content:flex-start}
+  .portrait{grid-column:1 / -1;position:static;display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:end}
+  .portrait .ph{aspect-ratio:1/1}.portrait .stamp{margin:0}
+  .about-copy{grid-column:1 / -1}
+  .idx{grid-column:1 / -1}.prev{display:none}
+  .row{grid-template-columns:96px 1fr auto}
+  .row .n{display:none}
+  .row .th{display:block;width:96px;aspect-ratio:1/1;position:relative;overflow:hidden;background:var(--c)}
+  .row .th svg{position:absolute;inset:0;width:100%;height:100%}
+  .row .ct{display:none}
+  .plans,.adds{grid-template-columns:1fr}
+  .queresuelve{grid-template-columns:1fr 1fr}
+  .condw,.faq{grid-column:1 / -1}
+  .contact-copy,.form-card{grid-column:1 / -1}
+  .f-brand{grid-column:1 / -1}.f-col,.f-nav{grid-column:span 4}
+  .case-art,.case-txt{grid-column:1 / -1}
+}
+@media(max-width:700px){
+  .hero-top{flex-direction:column}.hero-top .meta{text-align:left}
+  .portrait{grid-template-columns:1fr}
+  .voz{grid-template-columns:1fr}
+  .incl{grid-template-columns:1fr}
+  .queresuelve{grid-template-columns:1fr}
+  .sec-head{grid-template-columns:1fr}.sec-head p.r{text-align:left}
+  .filters .count{margin-left:0;width:100%}
+  .cnd li{grid-template-columns:1fr}
+  .f-col,.f-nav{grid-column:span 6}
+  .case-meta,.kpis{grid-template-columns:1fr}
+  .nav-cta{padding:.75rem 1.1rem}
+  .tools button span.long{display:none}
+  .proc-head .meta{text-align:left}
+  .row{grid-template-columns:72px minmax(0,1fr) auto;gap:.8rem}.row .th{width:72px}
+  @media(max-width:360px){.row{grid-template-columns:56px minmax(0,1fr) auto;gap:.6rem}.row .th{width:56px}}.row .go{width:2.4rem;height:2.4rem}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+  .thread .hebra{stroke-dashoffset:0}.thread .punta{opacity:1}.hilo .vline{transform:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="iso" viewBox="990.80 172.09 96.20 80.36"><path d="M 1017.214844 234.023438 L 998.824219 252.449219 L 1030.902344 252.449219 L 1032.222656 248.503906 L 1033.574219 244.414062 L 1036.25 236.378906 C 1036.25 236.378906 1036.277344 236.289062 1036.308594 236.171875 L 1038.570312 229.402344 C 1038.804688 228.695312 1038.921875 227.960938 1038.921875 227.222656 C 1038.921875 225.308594 1038.15625 223.574219 1036.894531 222.335938 C 1035.660156 221.070312 1033.929688 220.304688 1032.019531 220.304688 L 1014.863281 220.304688 C 1010.429688 220.304688 1006.84375 216.714844 1006.84375 212.269531 C 1006.84375 207.824219 1010.429688 204.234375 1014.863281 204.234375 L 1032.019531 204.234375 C 1033.929688 204.234375 1035.660156 203.46875 1036.894531 202.203125 C 1038.15625 200.964844 1038.921875 199.230469 1038.921875 197.316406 C 1038.921875 196.582031 1038.804688 195.84375 1038.570312 195.136719 L 1036.308594 188.367188 L 1036.25 188.160156 L 1033.574219 180.125 L 1032.222656 176.035156 L 1030.902344 172.089844 L 998.824219 172.089844 L 1017.214844 190.515625 C 1019.300781 192.605469 1017.832031 196.199219 1014.863281 196.199219 L 1006.84375 196.199219 C 1002.410156 196.199219 998.414062 197.992188 995.503906 200.90625 C 992.597656 203.820312 990.804688 207.824219 990.804688 212.269531 C 990.804688 216.714844 992.597656 220.71875 995.503906 223.632812 C 998.414062 226.546875 1002.410156 228.34375 1006.84375 228.34375 L 1014.863281 228.34375 C 1017.832031 228.34375 1019.300781 231.933594 1017.214844 234.023438 Z M 1017.214844 234.023438  M 1060.601562 234.023438 L 1078.988281 252.449219 L 1046.910156 252.449219 L 1045.589844 248.503906 L 1044.238281 244.414062 L 1041.566406 236.378906 C 1041.566406 236.378906 1041.535156 236.289062 1041.507812 236.171875 L 1039.246094 229.402344 C 1039.011719 228.695312 1038.890625 227.960938 1038.890625 227.222656 C 1038.890625 225.308594 1039.65625 223.574219 1040.917969 222.335938 C 1042.152344 221.070312 1043.886719 220.304688 1045.796875 220.304688 L 1062.949219 220.304688 C 1067.386719 220.304688 1070.96875 216.714844 1070.96875 212.269531 C 1070.96875 207.824219 1067.386719 204.234375 1062.949219 204.234375 L 1045.796875 204.234375 C 1043.886719 204.234375 1042.152344 203.46875 1040.917969 202.203125 C 1039.65625 200.964844 1038.890625 199.230469 1038.890625 197.316406 C 1038.890625 196.582031 1039.011719 195.84375 1039.246094 195.136719 L 1041.507812 188.367188 L 1041.566406 188.160156 L 1044.238281 180.125 L 1045.589844 176.035156 L 1046.910156 172.089844 L 1078.988281 172.089844 L 1060.601562 190.515625 C 1058.515625 192.605469 1059.984375 196.199219 1062.949219 196.199219 L 1070.96875 196.199219 C 1075.40625 196.199219 1079.402344 197.992188 1082.308594 200.90625 C 1085.21875 203.820312 1087.007812 207.824219 1087.007812 212.269531 C 1087.007812 216.714844 1085.21875 220.71875 1082.308594 223.632812 C 1079.402344 226.546875 1075.40625 228.34375 1070.96875 228.34375 L 1062.949219 228.34375 C 1059.984375 228.34375 1058.515625 231.933594 1060.601562 234.023438 Z M 1060.601562 234.023438 "/></symbol>
+    <symbol id="logo" viewBox="990.80 172.09 400.00 80.36"><path d="M 1017.214844 234.023438 L 998.824219 252.449219 L 1030.902344 252.449219 L 1032.222656 248.503906 L 1033.574219 244.414062 L 1036.25 236.378906 C 1036.25 236.378906 1036.277344 236.289062 1036.308594 236.171875 L 1038.570312 229.402344 C 1038.804688 228.695312 1038.921875 227.960938 1038.921875 227.222656 C 1038.921875 225.308594 1038.15625 223.574219 1036.894531 222.335938 C 1035.660156 221.070312 1033.929688 220.304688 1032.019531 220.304688 L 1014.863281 220.304688 C 1010.429688 220.304688 1006.84375 216.714844 1006.84375 212.269531 C 1006.84375 207.824219 1010.429688 204.234375 1014.863281 204.234375 L 1032.019531 204.234375 C 1033.929688 204.234375 1035.660156 203.46875 1036.894531 202.203125 C 1038.15625 200.964844 1038.921875 199.230469 1038.921875 197.316406 C 1038.921875 196.582031 1038.804688 195.84375 1038.570312 195.136719 L 1036.308594 188.367188 L 1036.25 188.160156 L 1033.574219 180.125 L 1032.222656 176.035156 L 1030.902344 172.089844 L 998.824219 172.089844 L 1017.214844 190.515625 C 1019.300781 192.605469 1017.832031 196.199219 1014.863281 196.199219 L 1006.84375 196.199219 C 1002.410156 196.199219 998.414062 197.992188 995.503906 200.90625 C 992.597656 203.820312 990.804688 207.824219 990.804688 212.269531 C 990.804688 216.714844 992.597656 220.71875 995.503906 223.632812 C 998.414062 226.546875 1002.410156 228.34375 1006.84375 228.34375 L 1014.863281 228.34375 C 1017.832031 228.34375 1019.300781 231.933594 1017.214844 234.023438 Z M 1017.214844 234.023438  M 1060.601562 234.023438 L 1078.988281 252.449219 L 1046.910156 252.449219 L 1045.589844 248.503906 L 1044.238281 244.414062 L 1041.566406 236.378906 C 1041.566406 236.378906 1041.535156 236.289062 1041.507812 236.171875 L 1039.246094 229.402344 C 1039.011719 228.695312 1038.890625 227.960938 1038.890625 227.222656 C 1038.890625 225.308594 1039.65625 223.574219 1040.917969 222.335938 C 1042.152344 221.070312 1043.886719 220.304688 1045.796875 220.304688 L 1062.949219 220.304688 C 1067.386719 220.304688 1070.96875 216.714844 1070.96875 212.269531 C 1070.96875 207.824219 1067.386719 204.234375 1062.949219 204.234375 L 1045.796875 204.234375 C 1043.886719 204.234375 1042.152344 203.46875 1040.917969 202.203125 C 1039.65625 200.964844 1038.890625 199.230469 1038.890625 197.316406 C 1038.890625 196.582031 1039.011719 195.84375 1039.246094 195.136719 L 1041.507812 188.367188 L 1041.566406 188.160156 L 1044.238281 180.125 L 1045.589844 176.035156 L 1046.910156 172.089844 L 1078.988281 172.089844 L 1060.601562 190.515625 C 1058.515625 192.605469 1059.984375 196.199219 1062.949219 196.199219 L 1070.96875 196.199219 C 1075.40625 196.199219 1079.402344 197.992188 1082.308594 200.90625 C 1085.21875 203.820312 1087.007812 207.824219 1087.007812 212.269531 C 1087.007812 216.714844 1085.21875 220.71875 1082.308594 223.632812 C 1079.402344 226.546875 1075.40625 228.34375 1070.96875 228.34375 L 1062.949219 228.34375 C 1059.984375 228.34375 1058.515625 231.933594 1060.601562 234.023438 Z M 1060.601562 234.023438  M 1135.769531 224.25 L 1145.789062 224.25 L 1145.789062 234.023438 L 1160.945312 234.023438 L 1160.945312 224.25 L 1170.960938 224.25 L 1170.960938 251.773438 L 1160.945312 251.773438 L 1160.945312 240.824219 L 1145.789062 240.824219 L 1145.789062 251.773438 L 1135.769531 251.773438 Z M 1135.769531 224.25  M 1175.488281 239.085938 L 1175.488281 224.25 L 1185.503906 224.25 L 1185.503906 238.554688 C 1185.503906 243 1188.46875 245.207031 1193.171875 245.207031 C 1197.871094 245.207031 1200.808594 243.03125 1200.808594 238.554688 L 1200.808594 224.25 L 1210.765625 224.25 L 1210.765625 239.085938 C 1210.765625 247.679688 1204.246094 252.449219 1193.113281 252.449219 C 1181.976562 252.449219 1175.457031 247.679688 1175.457031 239.085938 Z M 1175.488281 239.085938  M 1224.601562 224.25 L 1236.234375 224.25 L 1249.628906 251.773438 L 1239.230469 251.773438 L 1237.085938 246.976562 L 1223.398438 246.976562 L 1221.28125 251.773438 L 1210.914062 251.773438 Z M 1235.148438 241.324219 L 1230.300781 230.433594 L 1230.210938 230.433594 L 1225.304688 241.324219 Z M 1235.148438 241.324219  M 1251.683594 224.25 L 1264.640625 224.25 L 1274.15625 242.941406 L 1274.246094 242.941406 L 1283.644531 224.25 L 1296.777344 224.25 L 1296.777344 251.773438 L 1287.347656 251.773438 L 1287.347656 234.523438 L 1287.257812 234.523438 L 1278.679688 251.773438 L 1270.132812 251.773438 L 1261.230469 234.523438 L 1261.144531 234.523438 L 1261.144531 251.773438 L 1251.714844 251.773438 L 1251.714844 224.25 Z M 1251.683594 224.25  M 1312.582031 224.25 L 1324.210938 224.25 L 1337.609375 251.773438 L 1327.207031 251.773438 L 1325.066406 246.976562 L 1311.375 246.976562 L 1309.261719 251.773438 L 1298.890625 251.773438 Z M 1323.125 241.324219 L 1318.277344 230.433594 L 1318.191406 230.433594 L 1313.285156 241.324219 Z M 1323.125 241.324219  M 1339.664062 224.25 L 1351.707031 224.25 L 1366.484375 242.207031 L 1366.511719 242.207031 L 1366.511719 224.25 L 1375.941406 224.25 L 1375.941406 251.773438 L 1363.925781 251.773438 L 1349.121094 233.582031 L 1349.09375 233.582031 L 1349.09375 251.773438 L 1339.664062 251.773438 Z M 1339.664062 224.25  M 1380.847656 224.25 L 1390.777344 224.25 L 1390.777344 251.773438 L 1380.847656 251.773438 Z M 1380.847656 224.25  M 1135.769531 173.472656 L 1167.261719 173.472656 C 1178.335938 173.472656 1184.503906 178.390625 1184.503906 187.25 C 1184.445312 195.902344 1178.277344 200.644531 1167.144531 200.644531 L 1149.988281 200.644531 L 1149.988281 212.625 L 1135.742188 212.625 L 1135.742188 173.445312 Z M 1162.53125 192.636719 C 1167.496094 192.636719 1170.226562 190.664062 1170.226562 187.042969 C 1170.226562 183.421875 1167.496094 181.507812 1162.53125 181.507812 L 1150.019531 181.507812 L 1150.019531 192.605469 L 1162.53125 192.605469 Z M 1162.53125 192.636719  M 1201.011719 173.472656 L 1217.550781 173.472656 L 1236.617188 212.652344 L 1221.8125 212.652344 L 1218.757812 205.824219 L 1199.25 205.824219 L 1196.253906 212.652344 L 1181.507812 212.652344 L 1200.984375 173.472656 Z M 1216.023438 197.789062 L 1209.148438 182.304688 L 1209.03125 182.304688 L 1202.042969 197.789062 Z M 1216.023438 197.789062  M 1239.4375 173.472656 L 1272.570312 173.472656 C 1281.914062 173.472656 1287.464844 177.476562 1287.464844 184.246094 C 1287.464844 188.191406 1285.113281 191.3125 1281.179688 192.664062 L 1281.179688 192.78125 C 1285.761719 193.988281 1288.550781 197.433594 1288.550781 201.878906 C 1288.550781 208.621094 1283.027344 212.652344 1273.65625 212.652344 L 1239.4375 212.652344 Z M 1268.636719 204.824219 C 1272.128906 204.824219 1274.304688 203.175781 1274.304688 200.613281 C 1274.304688 198.050781 1272.128906 196.285156 1268.636719 196.285156 L 1253.625 196.285156 L 1253.625 204.824219 Z M 1267.871094 189.28125 C 1271.191406 189.28125 1273.21875 187.808594 1273.21875 185.277344 C 1273.21875 182.746094 1271.191406 181.273438 1267.871094 181.273438 L 1253.683594 181.273438 L 1253.683594 189.25 L 1267.871094 189.25 Z M 1267.871094 189.28125  M 1293.78125 173.472656 L 1308.027344 173.472656 L 1308.027344 202.203125 L 1331.761719 202.203125 L 1331.761719 212.652344 L 1293.75 212.652344 L 1293.75 173.472656 Z M 1293.78125 173.472656  M 1333.523438 193.078125 C 1333.523438 180.507812 1344.980469 172.121094 1362.136719 172.121094 C 1379.289062 172.121094 1390.804688 180.480469 1390.804688 193.078125 C 1390.804688 205.675781 1379.347656 214.035156 1362.136719 214.035156 C 1344.921875 214.035156 1333.523438 205.675781 1333.523438 193.078125 Z M 1376.527344 193.078125 C 1376.527344 186.570312 1370.683594 182.1875 1362.105469 182.1875 C 1353.527344 182.1875 1347.742188 186.570312 1347.742188 193.078125 C 1347.742188 199.582031 1353.527344 203.96875 1362.105469 203.96875 C 1370.683594 203.96875 1376.527344 199.582031 1376.527344 193.078125 Z M 1376.527344 193.078125 "/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12H20M13 5L20 12L13 19"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M20 12H4M11 5L4 12L11 19"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V4M5 11L12 4L19 11"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M6 18L18 6M8 6H18V16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5L19 19M19 5L5 19"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8H20M4 16H20"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 13L9 18L20 7"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8 8H20V20H8ZM4 16V4H16"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav" data-theme="dark">
+  <div class="nav-pill">
+    <a class="logo" href="#inicio" aria-label="Pablo Huamani, ir al inicio"><svg viewBox="0 0 400.00 80.36" aria-hidden="true"><use href="#logo"/></svg></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+      </ul>
+    </nav>
+    <div class="nav-r">
+      <a class="nav-cta" href="#contacto">Hablemos</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><svg class="ic"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="menu" id="menu" hidden>
+  <nav aria-label="Menú móvil"><ol>
+    <li><a href="#proyectos">Proyectos</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#sobre-mi">Sobre mí</a></li><li><a href="#contacto">Hablemos</a></li>
+  </ol></nav>
+  <p class="mono">Diseño indomable para marcas que no piden permiso</p>
+</div>
+
+<!-- Riel del hilo: avance de lectura y salto entre secciones -->
+<nav class="rail" id="rail" aria-label="Recorrido de la página">
+  <a href="#inicio" aria-label="Inicio">01<span>Inicio</span></a>
+  <a href="#sobre-mi" aria-label="Sobre mí">02<span>Sobre mí</span></a>
+  <a href="#proyectos" aria-label="Proyectos">03<span>Proyectos</span></a>
+  <a href="#servicios" aria-label="Servicios y tarifas">04<span>Servicios</span></a>
+  <a href="#proceso" aria-label="Proceso">05<span>Proceso</span></a>
+  <a href="#contacto" aria-label="Contacto">06<span>Contacto</span></a>
+</nav>
+
+<main id="main">
+
+<!-- ============ 01 · HERO ============ -->
+<section class="sec hero" id="inicio" data-theme="dark" data-note="Hero · Oscuro, tipografía enorme y el hilo rojo que se dibuja al cargar. Tres columnas sobre el hilo presentan las claves en lugar de una lista de skills. CTA primario: portafolio. Secundario: tarifas.">
+  <div class="wrap">
+    <div class="hero-top rv">
+      <p class="mono">Pablo Huamani<br>Diseñador gráfico publicitario · Productos digitales</p>
+      <div class="meta"><b>Disponible</b>para proyectos 2027<br>Lima · Latinoamérica</div>
+    </div>
+    <h1 class="rv d1">Diseño <em>indomable</em><span>para marcas que no piden permiso</span></h1>
+    <div class="hero-row rv d2">
+      <p class="lead">Branding, interfaces y sitios web para marcas que entienden el diseño como herramienta estratégica. Cada decisión parte de datos reales, no de intuición.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-v" href="#proyectos">Ver portafolio <span class="ar"><svg class="ic"><use href="#i-arrow"/></svg></span></a>
+        <a class="btn btn-o" href="#servicios">Servicios y tarifas</a>
+      </div>
+    </div>
+    <div class="hilo hilo--hero" data-tangle="1" aria-label="Tres claves de mi trabajo">
+      <svg class="thread" aria-hidden="true"><line class="base"/><path class="hebra" pathLength="1"/><circle class="punta" r="14"/></svg>
+      <span class="vline" aria-hidden="true"></span>
+      <div class="pasos">
+        <section class="paso"><div class="nodo">01</div><span class="t">Investigo</span><h3>Data driven</h3><p>Cada decisión de diseño parte de datos de mercado, competencia y audiencia.</p></section>
+        <section class="paso"><div class="nodo">02</div><span class="t">Cuestiono</span><h3>Pensamiento crítico</h3><p>Cuestiono el brief y defiendo cada decisión con argumentos, no con gustos.</p></section>
+        <section class="paso"><div class="nodo">03</div><span class="t">Entrego</span><h3>Dominio multiplataforma</h3><p>Del logotipo a la web, las redes y el empaque, con un mismo sistema.</p></section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · SOBRE MÍ ============ -->
+<section class="sec" id="sobre-mi" data-theme="light" data-note="Sobre mí · Retrato fijo a la izquierda mientras se lee. Enfoque en tres reglas, no en una lista de adjetivos. Tono cercano y directo.">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="lab mono"><b>02</b> Sobre mí</span>
+      <h2>Diseño lo que <em>incomoda</em></h2>
+      <p class="r">Una marca sin filo es una marca sin memoria.</p>
+    </div>
+    <div class="about">
+      <aside class="portrait rv" aria-label="Retrato de Pablo Huamani (placeholder)">
+        <div class="ph cut">
+          <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Retrato en duotono, placeholder">
+            <rect width="400" height="500" fill="#FF4000"/>
+            <path d="M40 500 C40 400 110 360 200 350 C290 360 360 400 360 500 Z" fill="#1D1D1B"/>
+            <path d="M200 350 L150 500 L250 500 Z" fill="#FF4000"/>
+            <rect x="170" y="290" width="60" height="70" fill="#1D1D1B"/>
+            <ellipse cx="200" cy="215" rx="82" ry="102" fill="#1D1D1B"/>
+            <path d="M110 190 C120 100 280 100 292 190 C260 150 150 150 110 190 Z" fill="#FF4000"/>
+            <use href="#iso" x="270" y="30" width="110" height="92" style="fill:#FFF9F0"/>
+          </svg>
+          <div class="cap"><span class="pill tag solid-p">Foto · Proceso en bruto</span></div>
+        </div>
+        <div class="stamp"><span class="ico"><svg viewBox="0 0 96.20 80.36"><use href="#iso"/></svg></span><span>Lima · Perú<br><span style="font-weight:500">Trabajo remoto con LATAM</span></span></div>
+      </aside>
+      <div class="about-copy">
+        <p class="big rv">No diseño para pasar desapercibido. Diseño para que tu marca se <em>recuerde</em>.</p>
+        <p class="rv">Soy diseñador gráfico publicitario y trabajo con marcas que entienden el diseño como herramienta estratégica, no decorativa. Cada proyecto parte de un diagnóstico real y termina en un sistema que tu equipo opera sin depender de mí.</p>
+        <p class="rv">No copio referentes: los estudio, los desarmo y construyo algo que no existía antes. Cada retícula, cada peso tipográfico y cada corte responde a una decisión estratégica, nunca a una moda.</p>
+        <ul class="enfoque rv" aria-label="Mi enfoque">
+          <li><span class="mono">01</span><h4>Criterio antes que gustos</h4><p>Defiendo cada decisión con argumentos y datos.</p></li>
+          <li><span class="mono">02</span><h4>Sistema antes que pieza suelta</h4><p>Tu marca como sistema, no como logo suelto.</p></li>
+          <li><span class="mono">03</span><h4>Autonomía real del cliente</h4><p>Te entrego archivos, reglas y plantillas para operar solo.</p></li>
+        </ul>
+        <div class="voz rv" aria-label="Personalidad de marca">
+          <div>Auténtico, <em>siempre</em></div><div>Rebelde, <em>con propósito</em></div><div>Disruptivo, <em>con medida</em></div>
+        </div>
+        <ul class="skills rv" aria-label="Especialidades y habilidades">
+          <li><span class="pill">Branding</span></li><li><span class="pill">Identidad visual</span></li><li><span class="pill">UI / UX</span></li><li><span class="pill">Diseño web</span></li><li><span class="pill">Publicidad</span></li><li><span class="pill">Packaging</span></li><li><span class="pill">Data driven</span></li><li><span class="pill">Figma</span></li><li><span class="pill">HTML / CSS</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · PORTAFOLIO ============ -->
+<section class="sec" id="proyectos" data-theme="dark" data-note="Portafolio · Índice editorial: nombre grande, categoría y año. Al pasar el cursor, la vista previa cambia a la derecha (en móvil, miniatura por fila). Clic abre el detalle del caso.">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="lab mono"><b>03</b> Portafolio</span>
+      <h2>Casos que <em>no pidieron</em> permiso</h2>
+      <p class="r">Seis casos destacados. Pasa el cursor para verlos y haz clic para abrir el detalle.</p>
+    </div>
+    <div class="filters rv" role="group" aria-label="Filtrar proyectos por categoría">
+      <span class="mono">Filtrar</span>
+      <button class="pill" type="button" data-f="todos" aria-pressed="true">Todos</button>
+      <button class="pill" type="button" data-f="branding" aria-pressed="false">Branding</button>
+      <button class="pill" type="button" data-f="uiux" aria-pressed="false">UI / UX</button>
+      <button class="pill" type="button" data-f="web" aria-pressed="false">Web</button>
+      <button class="pill" type="button" data-f="publicidad" aria-pressed="false">Publicidad</button>
+      <button class="pill" type="button" data-f="packaging" aria-pressed="false">Packaging</button>
+      <span class="count mono" aria-live="polite"><b id="cnt">06</b> proyectos</span>
+    </div>
+    <div class="work">
+      <ul class="idx" id="idx">
+        <li data-cat="branding" data-id="rebeldia"><button type="button" class="row" data-id="rebeldia" aria-haspopup="dialog" aria-label="Ver caso: Rebeldía Grid"><span class="th"><svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder del proyecto Rebeldía Grid: retícula modular con letra R en cursiva"><rect width="800" height="600" fill="#1D1D1B"/><path d="M0 0V600M50 0V600M100 0V600M150 0V600M200 0V600M250 0V600M300 0V600M350 0V600M400 0V600M450 0V600M500 0V600M550 0V600M600 0V600M650 0V600M700 0V600M750 0V600M800 0V600M0 0H800M0 50H800M0 100H800M0 150H800M0 200H800M0 250H800M0 300H800M0 350H800M0 400H800M0 450H800M0 500H800M0 550H800M0 600H800" stroke="#FFF9F0" stroke-width="1" fill="none"/><text x="170" y="470" style="font-family:var(--serif);font-style:italic;font-weight:500;font-size:470px" fill="#FF4000">R</text><rect x="150" y="470" width="330" height="64" fill="#FFF9F0"/><text x="172" y="513" style="font-family:var(--sans);font-weight:700;font-size:30px" fill="#1D1D1B">Rebeldía Grid</text><polygon points="500,90 605,90 650,135 650,260 500,260" fill="#FF4000"/><use href="#iso" x="530" y="130" width="96" height="80.2" style="fill:#1D1D1B"/><rect x="500" y="272" width="150" height="34" fill="#FFF9F0"/><text x="510" y="295" style="font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:1.5px" fill="#1D1D1B">MODULAR 8 × 6</text></svg></span><span class="n">01</span><span class="nm">Rebeldía <em>Grid</em><small>Identidad construida desde una retícula que se atreve a romper su propio orden.</small></span><span class="ct pill tag">Branding</span><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></button></li>
+<li data-cat="branding publicidad" data-id="override"><button type="button" class="row" data-id="override" aria-haspopup="dialog" aria-label="Ver caso: OVERRIDE"><span class="th"><svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder del proyecto OVERRIDE: marca con bloques de corte 45 grados"><rect width="800" height="600" fill="#FF4000"/><polygon points="150,80 560,80 650,170 650,430 150,430" fill="#1D1D1B"/><text x="182" y="250" style="font-family:var(--sans);font-weight:700;font-size:128px;letter-spacing:-5px" fill="#FFF9F0">OVER</text><text x="182" y="380" style="font-family:var(--sans);font-weight:700;font-size:128px;letter-spacing:-5px" fill="#FF4000">RIDE</text><rect x="150" y="470" width="270" height="64" rx="32" fill="#FFF9F0"/><text x="184" y="512" style="font-family:var(--sans);font-weight:700;font-size:24px" fill="#1D1D1B">brand solutions</text><use href="#iso" x="520" y="460" width="130" height="108.6" style="fill:#1D1D1B"/></svg></span><span class="n">02</span><span class="nm"><em>OVER</em>RIDE<small>Soluciones de marca con bloques de corte diagonal y voz sin rodeos.</small></span><span class="ct pill tag">Branding · Publicidad</span><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></button></li>
+<li data-cat="uiux web" data-id="datapulse"><button type="button" class="row" data-id="datapulse" aria-haspopup="dialog" aria-label="Ver caso: Data Pulse"><span class="th"><svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder del proyecto Data Pulse: tablero con indicadores y barras"><rect width="800" height="600" fill="#1D1D1B"/><rect x="150" y="90" width="150" height="100" fill="#FFF9F0"/><rect x="325" y="90" width="150" height="100" fill="#FFF9F0"/><rect x="500" y="90" width="150" height="100" fill="#FF4000"/><text x="166" y="150" style="font-family:var(--sans);font-weight:700;font-size:40px;letter-spacing:-2px" fill="#1D1D1B">00%</text><text x="166" y="176" style="font-family:var(--sans);font-weight:700;font-size:13px" fill="#1D1D1B">Conversión</text><text x="341" y="150" style="font-family:var(--sans);font-weight:700;font-size:40px;letter-spacing:-2px" fill="#1D1D1B">0.0K</text><text x="341" y="176" style="font-family:var(--sans);font-weight:700;font-size:13px" fill="#1D1D1B">Sesiones</text><text x="516" y="150" style="font-family:var(--sans);font-weight:700;font-size:40px;letter-spacing:-2px" fill="#1D1D1B">00s</text><text x="516" y="176" style="font-family:var(--sans);font-weight:700;font-size:13px" fill="#1D1D1B">Tiempo</text><rect x="150" y="215" width="500" height="290" fill="none" stroke="#FFF9F0" stroke-width="3"/><rect x="172" y="368" width="34" height="117" fill="#FFF9F0"/><rect x="230" y="321" width="34" height="163" fill="#FFF9F0"/><rect x="288" y="391" width="34" height="93" fill="#FFF9F0"/><rect x="346" y="282" width="34" height="202" fill="#FFF9F0"/><rect x="404" y="336" width="34" height="148" fill="#FFF9F0"/><rect x="462" y="251" width="34" height="234" fill="#FF4000"/><rect x="520" y="305" width="34" height="179" fill="#FFF9F0"/><rect x="578" y="227" width="34" height="257" fill="#FFF9F0"/><polyline points="189,335 247,293 305,356 363,258 421,307 479,230 537,279 595,209" fill="none" stroke="#FF4000" stroke-width="4"/><rect x="150" y="530" width="170" height="44" rx="22" fill="#FF4000"/><text x="176" y="559" style="font-family:var(--sans);font-weight:700;font-size:17px" fill="#1D1D1B">Data driven</text></svg></span><span class="n">03</span><span class="nm">Data <em>Pulse</em><small>Tablero de métricas que prioriza la decisión sobre la decoración.</small></span><span class="ct pill tag">UI / UX</span><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></button></li>
+<li data-cat="publicidad uiux" data-id="bees"><button type="button" class="row" data-id="bees" aria-haspopup="dialog" aria-label="Ver caso: Distribuidores estratégicos"><span class="th"><svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder del proyecto BEES: lámina con pirámide de tres niveles para distribuidores"><rect width="800" height="600" fill="#FF4000"/><polygon points="150,100 600,100 650,150 650,400 150,400" fill="#1D1D1B"/><text x="180" y="170" style="font-family:var(--sans);font-weight:700;font-size:30px" fill="#FFF9F0">Distribuidores</text><text x="180" y="212" style="font-family:var(--serif);font-style:italic;font-weight:500;font-size:38px" fill="#FF4000">estratégicos</text><rect x="180" y="250" width="200" height="8" fill="#FFF9F0"/><rect x="180" y="274" width="150" height="8" fill="#FFF9F0"/><rect x="180" y="298" width="175" height="8" fill="#FFF9F0"/><polygon points="545,150 580,215 510,215" fill="#FF4000"/><polygon points="505,225 585,225 612,285 478,285" fill="#FFF9F0"/><polygon points="470,295 620,295 646,355 444,355" fill="none" stroke="#FFF9F0" stroke-width="4"/><rect x="150" y="440" width="150" height="48" rx="24" fill="#1D1D1B"/><text x="176" y="472" style="font-family:var(--sans);font-weight:700;font-size:18px" fill="#FFF9F0">Pirámide</text><rect x="312" y="440" width="150" height="48" rx="24" fill="none" stroke="#1D1D1B" stroke-width="3"/><text x="338" y="472" style="font-family:var(--sans);font-weight:700;font-size:18px" fill="#1D1D1B">3 niveles</text><rect x="474" y="440" width="96" height="48" rx="24" fill="#FFF9F0"/><text x="500" y="472" style="font-family:var(--sans);font-weight:700;font-size:18px" fill="#1D1D1B">DES</text></svg></span><span class="n">04</span><span class="nm">Distribuidores <em>estratégicos</em><small>Sistema de láminas para presentar una estrategia comercial a distribuidores.</small></span><span class="ct pill tag">Publicidad · Comunicación</span><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></button></li>
+<li data-cat="web" data-id="kallpa"><button type="button" class="row" data-id="kallpa" aria-haspopup="dialog" aria-label="Ver caso: Landing Kallpa"><span class="th"><svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder del proyecto Kallpa: landing con titular y botón"><rect width="800" height="600" fill="#1D1D1B"/><rect x="150" y="90" width="500" height="420" fill="#FFF9F0"/><rect x="150" y="90" width="500" height="40" fill="#FF4000"/><circle cx="172" cy="110" r="6" fill="#1D1D1B"/><circle cx="192" cy="110" r="6" fill="#1D1D1B"/><circle cx="212" cy="110" r="6" fill="#1D1D1B"/><rect x="470" y="104" width="30" height="8" fill="#1D1D1B"/><rect x="510" y="104" width="30" height="8" fill="#1D1D1B"/><rect x="550" y="104" width="30" height="8" fill="#1D1D1B"/><text x="180" y="245" style="font-family:var(--sans);font-weight:700;font-size:88px;letter-spacing:-4px" fill="#1D1D1B">Kallpa</text><text x="182" y="292" style="font-family:var(--serif);font-style:italic;font-weight:500;font-size:34px" fill="#FF4000">fuerza de marca</text><rect x="182" y="326" width="250" height="9" fill="#1D1D1B"/><rect x="182" y="348" width="190" height="9" fill="#1D1D1B"/><rect x="180" y="398" width="190" height="54" rx="27" fill="#FF4000"/><text x="206" y="432" style="font-family:var(--sans);font-weight:700;font-size:19px" fill="#1D1D1B">Cotizar</text><polygon points="470,170 600,170 630,200 630,470 470,470" fill="#FF4000"/><use href="#iso" x="488" y="290" width="124" height="103.6" style="fill:#1D1D1B"/></svg></span><span class="n">05</span><span class="nm">Landing <em>Kallpa</em><small>Landing de conversión con estructura medida con datos de navegación.</small></span><span class="ct pill tag">Diseño web</span><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></button></li>
+<li data-cat="packaging branding" data-id="chala"><button type="button" class="row" data-id="chala" aria-haspopup="dialog" aria-label="Ver caso: Caja Chala"><span class="th"><svg viewBox="0 0 1050 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder del proyecto Chala: caja de producto con etiqueta"><rect width="1050" height="400" fill="#FF4000"/><polygon points="405,150 455,100 685,100 635,150" fill="#FFF9F0"/><polygon points="635,150 685,100 685,320 635,370" fill="#FFF9F0"/><rect x="405" y="150" width="230" height="220" fill="#1D1D1B"/><rect x="430" y="215" width="180" height="110" fill="#FFF9F0"/><text x="446" y="272" style="font-family:var(--sans);font-weight:700;font-size:44px;letter-spacing:-2px" fill="#1D1D1B">CHALA</text><text x="448" y="302" style="font-family:var(--serif);font-style:italic;font-weight:500;font-size:20px" fill="#FF4000">edición origen</text><use href="#iso" x="432" y="168" width="58" height="48.4" style="fill:#FF4000"/><rect x="90" y="170" width="190" height="48" rx="24" fill="#FFF9F0"/><text x="116" y="202" style="font-family:var(--sans);font-weight:700;font-size:18px" fill="#1D1D1B">Packaging</text><rect x="770" y="250" width="200" height="48" rx="24" fill="#1D1D1B"/><text x="796" y="282" style="font-family:var(--sans);font-weight:700;font-size:18px" fill="#FFF9F0">Piezas gráficas</text></svg></span><span class="n">06</span><span class="nm">Caja <em>Chala</em><small>Empaque y piezas impresas que defienden el producto en el punto de venta.</small></span><span class="ct pill tag">Packaging · Piezas gráficas</span><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></button></li>
+
+      </ul>
+      <div class="prev rv" id="prev" aria-hidden="true">
+        <div class="art cut"><svg data-id="rebeldia" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder del proyecto Rebeldía Grid: retícula modular con letra R en cursiva"><rect width="800" height="600" fill="#1D1D1B"/><path d="M0 0V600M50 0V600M100 0V600M150 0V600M200 0V600M250 0V600M300 0V600M350 0V600M400 0V600M450 0V600M500 0V600M550 0V600M600 0V600M650 0V600M700 0V600M750 0V600M800 0V600M0 0H800M0 50H800M0 100H800M0 150H800M0 200H800M0 250H800M0 300H800M0 350H800M0 400H800M0 450H800M0 500H800M0 550H800M0 600H800" stroke="#FFF9F0" stroke-width="1" fill="none"/><text x="170" y="470" style="font-family:var(--serif);font-style:italic;font-weight:500;font-size:470px" fill="#FF4000">R</text><rect x="150" y="470" width="330" height="64" fill="#FFF9F0"/><text x="172" y="513" style="font-family:var(--sans);font-weight:700;font-size:30px" fill="#1D1D1B">Rebeldía Grid</text><polygon points="500,90 605,90 650,135 650,260 500,260" fill="#FF4000"/><use href="#iso" x="530" y="130" width="96" height="80.2" style="fill:#1D1D1B"/><rect x="500" y="272" width="150" height="34" fill="#FFF9F0"/><text x="510" y="295" style="font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:1.5px" fill="#1D1D1B">MODULAR 8 × 6</text></svg><svg data-id="override" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder del proyecto OVERRIDE: marca con bloques de corte 45 grados"><rect width="800" height="600" fill="#FF4000"/><polygon points="150,80 560,80 650,170 650,430 150,430" fill="#1D1D1B"/><text x="182" y="250" style="font-family:var(--sans);font-weight:700;font-size:128px;letter-spacing:-5px" fill="#FFF9F0">OVER</text><text x="182" y="380" style="font-family:var(--sans);font-weight:700;font-size:128px;letter-spacing:-5px" fill="#FF4000">RIDE</text><rect x="150" y="470" width="270" height="64" rx="32" fill="#FFF9F0"/><text x="184" y="512" style="font-family:var(--sans);font-weight:700;font-size:24px" fill="#1D1D1B">brand solutions</text><use href="#iso" x="520" y="460" width="130" height="108.6" style="fill:#1D1D1B"/></svg><svg data-id="datapulse" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder del proyecto Data Pulse: tablero con indicadores y barras"><rect width="800" height="600" fill="#1D1D1B"/><rect x="150" y="90" width="150" height="100" fill="#FFF9F0"/><rect x="325" y="90" width="150" height="100" fill="#FFF9F0"/><rect x="500" y="90" width="150" height="100" fill="#FF4000"/><text x="166" y="150" style="font-family:var(--sans);font-weight:700;font-size:40px;letter-spacing:-2px" fill="#1D1D1B">00%</text><text x="166" y="176" style="font-family:var(--sans);font-weight:700;font-size:13px" fill="#1D1D1B">Conversión</text><text x="341" y="150" style="font-family:var(--sans);font-weight:700;font-size:40px;letter-spacing:-2px" fill="#1D1D1B">0.0K</text><text x="341" y="176" style="font-family:var(--sans);font-weight:700;font-size:13px" fill="#1D1D1B">Sesiones</text><text x="516" y="150" style="font-family:var(--sans);font-weight:700;font-size:40px;letter-spacing:-2px" fill="#1D1D1B">00s</text><text x="516" y="176" style="font-family:var(--sans);font-weight:700;font-size:13px" fill="#1D1D1B">Tiempo</text><rect x="150" y="215" width="500" height="290" fill="none" stroke="#FFF9F0" stroke-width="3"/><rect x="172" y="368" width="34" height="117" fill="#FFF9F0"/><rect x="230" y="321" width="34" height="163" fill="#FFF9F0"/><rect x="288" y="391" width="34" height="93" fill="#FFF9F0"/><rect x="346" y="282" width="34" height="202" fill="#FFF9F0"/><rect x="404" y="336" width="34" height="148" fill="#FFF9F0"/><rect x="462" y="251" width="34" height="234" fill="#FF4000"/><rect x="520" y="305" width="34" height="179" fill="#FFF9F0"/><rect x="578" y="227" width="34" height="257" fill="#FFF9F0"/><polyline points="189,335 247,293 305,356 363,258 421,307 479,230 537,279 595,209" fill="none" stroke="#FF4000" stroke-width="4"/><rect x="150" y="530" width="170" height="44" rx="22" fill="#FF4000"/><text x="176" y="559" style="font-family:var(--sans);font-weight:700;font-size:17px" fill="#1D1D1B">Data driven</text></svg><svg data-id="bees" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder del proyecto BEES: lámina con pirámide de tres niveles para distribuidores"><rect width="800" height="600" fill="#FF4000"/><polygon points="150,100 600,100 650,150 650,400 150,400" fill="#1D1D1B"/><text x="180" y="170" style="font-family:var(--sans);font-weight:700;font-size:30px" fill="#FFF9F0">Distribuidores</text><text x="180" y="212" style="font-family:var(--serif);font-style:italic;font-weight:500;font-size:38px" fill="#FF4000">estratégicos</text><rect x="180" y="250" width="200" height="8" fill="#FFF9F0"/><rect x="180" y="274" width="150" height="8" fill="#FFF9F0"/><rect x="180" y="298" width="175" height="8" fill="#FFF9F0"/><polygon points="545,150 580,215 510,215" fill="#FF4000"/><polygon points="505,225 585,225 612,285 478,285" fill="#FFF9F0"/><polygon points="470,295 620,295 646,355 444,355" fill="none" stroke="#FFF9F0" stroke-width="4"/><rect x="150" y="440" width="150" height="48" rx="24" fill="#1D1D1B"/><text x="176" y="472" style="font-family:var(--sans);font-weight:700;font-size:18px" fill="#FFF9F0">Pirámide</text><rect x="312" y="440" width="150" height="48" rx="24" fill="none" stroke="#1D1D1B" stroke-width="3"/><text x="338" y="472" style="font-family:var(--sans);font-weight:700;font-size:18px" fill="#1D1D1B">3 niveles</text><rect x="474" y="440" width="96" height="48" rx="24" fill="#FFF9F0"/><text x="500" y="472" style="font-family:var(--sans);font-weight:700;font-size:18px" fill="#1D1D1B">DES</text></svg><svg data-id="kallpa" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder del proyecto Kallpa: landing con titular y botón"><rect width="800" height="600" fill="#1D1D1B"/><rect x="150" y="90" width="500" height="420" fill="#FFF9F0"/><rect x="150" y="90" width="500" height="40" fill="#FF4000"/><circle cx="172" cy="110" r="6" fill="#1D1D1B"/><circle cx="192" cy="110" r="6" fill="#1D1D1B"/><circle cx="212" cy="110" r="6" fill="#1D1D1B"/><rect x="470" y="104" width="30" height="8" fill="#1D1D1B"/><rect x="510" y="104" width="30" height="8" fill="#1D1D1B"/><rect x="550" y="104" width="30" height="8" fill="#1D1D1B"/><text x="180" y="245" style="font-family:var(--sans);font-weight:700;font-size:88px;letter-spacing:-4px" fill="#1D1D1B">Kallpa</text><text x="182" y="292" style="font-family:var(--serif);font-style:italic;font-weight:500;font-size:34px" fill="#FF4000">fuerza de marca</text><rect x="182" y="326" width="250" height="9" fill="#1D1D1B"/><rect x="182" y="348" width="190" height="9" fill="#1D1D1B"/><rect x="180" y="398" width="190" height="54" rx="27" fill="#FF4000"/><text x="206" y="432" style="font-family:var(--sans);font-weight:700;font-size:19px" fill="#1D1D1B">Cotizar</text><polygon points="470,170 600,170 630,200 630,470 470,470" fill="#FF4000"/><use href="#iso" x="488" y="290" width="124" height="103.6" style="fill:#1D1D1B"/></svg><svg data-id="chala" viewBox="0 0 1050 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder del proyecto Chala: caja de producto con etiqueta"><rect width="1050" height="400" fill="#FF4000"/><polygon points="405,150 455,100 685,100 635,150" fill="#FFF9F0"/><polygon points="635,150 685,100 685,320 635,370" fill="#FFF9F0"/><rect x="405" y="150" width="230" height="220" fill="#1D1D1B"/><rect x="430" y="215" width="180" height="110" fill="#FFF9F0"/><text x="446" y="272" style="font-family:var(--sans);font-weight:700;font-size:44px;letter-spacing:-2px" fill="#1D1D1B">CHALA</text><text x="448" y="302" style="font-family:var(--serif);font-style:italic;font-weight:500;font-size:20px" fill="#FF4000">edición origen</text><use href="#iso" x="432" y="168" width="58" height="48.4" style="fill:#FF4000"/><rect x="90" y="170" width="190" height="48" rx="24" fill="#FFF9F0"/><text x="116" y="202" style="font-family:var(--sans);font-weight:700;font-size:18px" fill="#1D1D1B">Packaging</text><rect x="770" y="250" width="200" height="48" rx="24" fill="#1D1D1B"/><text x="796" y="282" style="font-family:var(--sans);font-weight:700;font-size:18px" fill="#FFF9F0">Piezas gráficas</text></svg></div>
+        <p class="lbl mono"><span id="prevName">Rebeldía Grid</span><span id="prevCat">Branding</span></p>
+      </div>
+    </div>
+    <div class="more rv"><a class="btn btn-v" href="#contacto">Quiero un caso así <span class="ar"><svg class="ic"><use href="#i-arrow"/></svg></span></a></div>
+  </div>
+</section>
+
+<dialog class="case" id="case" aria-labelledby="caseTitle">
+  <div class="case-in">
+    <div class="case-art"><div class="box" id="caseArt"></div><p class="cap mono">Placeholder visual · reemplaza por imágenes del proyecto</p></div>
+    <div class="case-txt">
+      <div class="case-top"><span class="pill tag solid-v" id="caseCat">Categoría</span><button class="case-x" type="button" id="caseClose"><svg class="ic"><use href="#i-x"/></svg>Cerrar</button></div>
+      <h3 id="caseTitle">Título</h3>
+      <dl class="case-meta"><div><dt>Año</dt><dd id="caseYear"></dd></div><div><dt>Mi rol</dt><dd id="caseRole"></dd></div><div><dt>Entregables</dt><dd id="caseDel"></dd></div></dl>
+      <div class="case-blk"><h4>El reto</h4><p id="caseReto"></p></div>
+      <div class="case-blk"><h4>La solución</h4><p id="caseSol"></p></div>
+      <div class="case-blk"><h4>Impacto medido con datos</h4><div class="kpis" id="caseKpi"></div></div>
+      <p class="case-note">Contenido de ejemplo. Reemplaza imágenes, textos y métricas por los datos reales de cada proyecto.</p>
+      <div class="case-nav"><button class="btn btn-o" type="button" id="casePrev"><svg class="ic"><use href="#i-left"/></svg>Anterior</button><button class="btn btn-v" type="button" id="caseNext">Siguiente <span class="ar"><svg class="ic"><use href="#i-arrow"/></svg></span></button></div>
+    </div>
+  </div>
+</dialog>
+
+<!-- ============ 04 · SERVICIOS Y TARIFAS ============ -->
+<section class="sec" id="servicios" data-theme="light" data-note="Servicios · Tus servicios y tarifas reales (Servicios 2026). Identidad de marca en dos niveles y tres adicionales. El interruptor cambia entre soles y dólares. Los adicionales tienen 15% menos al sumarlos a una identidad.">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="lab mono"><b>04</b> Servicios y tarifas</span>
+      <h2>Creación de marcas, <em>sin rodeos</em></h2>
+      <p class="r">Cada servicio parte de un sistema, no de una pieza suelta. Primero qué resuelve, después qué incluye y cuánto cuesta.</p>
+    </div>
+    <div class="cur rv" role="group" aria-label="Moneda de los precios">
+      <button type="button" data-cur="pen" aria-pressed="true">Soles · S/</button>
+      <button type="button" data-cur="usd" aria-pressed="false">Dólares · US$</button>
+    </div>
+
+    <div class="group-h rv"><span class="mono">01</span><h3>Identidad de <em>marca</em></h3></div>
+    <ul class="queresuelve rv" aria-label="Qué resuelve una identidad de marca">
+      <li><b>01 · Estrategia</b><h4>Estrategia de marca</h4><p>Investigo mercado, competencia y audiencia. Defino propósito, personalidad y territorio.</p></li>
+      <li><b>02 · Identidad</b><h4>Identidad visual</h4><p>Logotipo con variaciones, paleta, tipografía y elementos gráficos de apoyo.</p></li>
+      <li><b>03 · Manual</b><h4>Manual de marca</h4><p>Uso correcto del logotipo, color y tipografías, para cualquier pieza futura.</p></li>
+      <li><b>04 · Implementación</b><h4>Implementación</h4><p>Archivos listos y guía para aplicar la identidad en redes, papelería o empaque.</p></li>
+    </ul>
+    <div class="plans">
+      <article class="plan feat cut rv">
+        <div class="top"><span class="tag pill">Recomendada</span><span class="mono">De cinco a seis semanas</span></div>
+        <h3>Identidad <em>indomable</em></h3>
+        <p class="desc">Para marcas decididas a construir su identidad completa. Parte de la estrategia y termina en un manual con el que tu marca opera sin depender de mí.</p>
+        <div class="pr" data-pen="S/ 4,800" data-usd="US$ 1,330"><span class="l">Inversión · desde</span><span class="m"></span><span class="a"></span></div>
+        <h4>Qué incluye</h4>
+        <ul class="incl"><li>Análisis e investigación de marca</li><li>Estrategia y ADN de marca</li><li>Personalidad y concepto</li><li>Moodboard, dirección visual</li><li>Logotipo principal y tres variaciones</li><li>Paleta de color y selección tipográfica</li><li>Trama, pattern o ilustración</li><li>Manual de marca completo</li></ul>
+        <p class="cond"><b>CONDICIÓN</b>Inicio con 50% y saldo al entregar. Incluye dos rondas de revisión.</p>
+        <a class="btn btn-c" href="#contacto" data-pick="Branding" style="align-self:flex-start">Quiero esta identidad <span class="ar"><svg class="ic"><use href="#i-arrow"/></svg></span></a>
+      </article>
+      <article class="plan base cut-bl rv d1">
+        <div class="top"><span class="tag pill">Lo esencial</span><span class="mono">De dos a tres semanas</span></div>
+        <h3>Identidad <em>expresa</em></h3>
+        <p class="desc">Para marcas que arrancan y necesitan lo esencial con un presupuesto ajustado. Una base clara, lista para usar y para crecer.</p>
+        <div class="pr" data-pen="S/ 1,800" data-usd="US$ 500"><span class="l">Inversión · desde</span><span class="m"></span><span class="a"></span></div>
+        <h4>Qué incluye</h4>
+        <ul class="incl"><li>Investigación y análisis de marca</li><li>Concepto y personalidad</li><li>Moodboard, dirección visual</li><li>Logotipo principal y sublogo</li><li>Paleta de color y tipografía</li><li>Archivos fuente listos para usar</li><li>Mini manual de marca</li></ul>
+        <p class="cond"><b>CONDICIÓN</b>Inicio con 50% y saldo al entregar. Incluye dos rondas de revisión.</p>
+        <a class="btn btn-v" href="#contacto" data-pick="Branding" style="align-self:flex-start">Quiero esta identidad <span class="ar"><svg class="ic"><use href="#i-arrow"/></svg></span></a>
+      </article>
+    </div>
+
+    <div class="sv-gap"></div>
+    <div class="group-h rv"><span class="mono">02</span><h3>Tu identidad <em>aplicada</em></h3></div>
+    <p class="lead rv" style="margin-bottom:clamp(20px,3vw,34px);color:var(--c70)">Tu identidad en el mundo real. Piezas que llevan tu marca a redes, producto y papel con el mismo criterio con que diseño el sistema.</p>
+    <div class="adds">
+      <article class="add rv">
+        <div class="tg"><span class="tag pill">Redes sociales</span><span class="mono">01</span></div>
+        <h3>Social media <em>visual</em></h3>
+        <p class="sub">Una presencia visual coherente desde el primer post.</p>
+        <div class="pr" data-pen="S/ 900" data-usd="US$ 250"><span class="l">Desde</span><span class="m"></span><span class="a"></span></div>
+        <ul><li>Guía de estilo para Instagram</li><li>Cinco íconos de historias destacadas</li><li>Dos plantillas para posts y Reels</li><li>Dos plantillas para stories</li><li>Imagen de perfil para IG y FB</li></ul>
+      </article>
+      <article class="add rv d1">
+        <div class="tg"><span class="tag pill">Producto</span><span class="mono">02</span></div>
+        <h3>Packaging y <em>producto</em></h3>
+        <p class="sub">Un empaque que se reconoce en el estante.</p>
+        <div class="pr" data-pen="S/ 1,500" data-usd="US$ 415"><span class="l">Desde</span><span class="m"></span><span class="a"></span></div>
+        <ul><li>Diseño de cajas de producto</li><li>Diseño de etiquetas de producto</li><li>Tarjetas de agradecimiento</li></ul>
+      </article>
+      <article class="add rv d2">
+        <div class="tg"><span class="tag pill">Print</span><span class="mono">03</span></div>
+        <h3>Papelería y <em>print</em></h3>
+        <p class="sub">Tu marca en el mundo físico, lista para imprimir.</p>
+        <div class="pr" data-pen="S/ 700" data-usd="US$ 195"><span class="l">Desde</span><span class="m"></span><span class="a"></span></div>
+        <ul><li>Tarjetas de presentación</li><li>Sobres y folders</li><li>Hangtags</li><li>Carta o menú</li><li>Afiches y flyers</li></ul>
+      </article>
+    </div>
+    <div class="disc cut rv">
+      <p><em>15% menos</em> al sumar cualquiera de estos servicios a una identidad.</p>
+      <small>Cada servicio se cotiza según la cantidad de piezas. Impresión y producción van aparte.</small>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · PROCESO ============ -->
+<section class="sec" id="proceso" data-theme="dark" data-note="Proceso · El hilo del archivo proceso-pablo-huamani.html, ahora responsive: recto y firme, se enreda donde se itera (diseño y revisión) y se endereza al validar. Debajo, condiciones y preguntas frecuentes.">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="lab mono"><b>05</b> Proceso de trabajo</span>
+      <h2>Método firme. <em>Resultado indomable.</em></h2>
+    </div>
+    <div class="proc-head rv">
+      <p class="lead">Seis pasos, un solo hilo. Siempre sabes en qué punto estamos y qué sigue. Presento un camino fundamentado, no veinte opciones para elegir.</p>
+      <div class="meta"><b>6 pasos</b>Unas 6 semanas<br>de punta a punta</div>
+    </div>
+    <div class="hilo hilo--proc" data-tangle="3" aria-label="Los seis pasos del proceso">
+      <svg class="thread" aria-hidden="true"><line class="base"/><path class="hebra" pathLength="1"/><circle class="punta" r="14"/></svg>
+      <span class="vline" aria-hidden="true"></span>
+      <div class="pasos">
+        <section class="paso"><div class="nodo">01</div><span class="t">Dos horas</span><h3>Conversación inicial</h3><p>Nos conocemos y aterrizamos el proyecto. Defino contigo qué debe lograr tu marca.</p><ul><li>Metas y expectativas</li><li>Lo que tu marca no quiere parecer</li></ul></section>
+<section class="paso"><div class="nodo">02</div><span class="t">Una semana</span><h3>Diagnóstico y territorio</h3><p>Investigo tu mercado, tu competencia y a quién le hablas para encontrar el espacio que nadie ocupa.</p><ul><li>Referentes y competencia</li><li>Mapa de territorio</li></ul></section>
+<section class="paso"><div class="nodo">03</div><span class="t">Una semana</span><h3>Estrategia y concepto</h3><p>Defino la idea de marca, su personalidad y su tono. Todo lo que viene nace de aquí.</p><ul><li>Posicionamiento y tono</li><li>Ruta creativa fundamentada</li></ul></section>
+<section class="paso"><div class="nodo">04</div><span class="t">Dos semanas</span><h3>Diseño del sistema</h3><p>La marca toma forma: logotipo, tipografía, color y las primeras piezas en uso.</p><ul><li>Identidad visual completa</li><li>Aplicaciones clave</li></ul></section>
+<section class="paso"><div class="nodo">05</div><span class="t">Una semana</span><h3>Revisión y ajustes</h3><p>Revisamos juntos y afino cada detalle hasta que la marca responda al objetivo.</p><ul><li>Dos rondas de revisión</li><li>Validación final</li></ul></section>
+<section class="paso"><div class="nodo">06</div><span class="t">Dos días</span><h3>Entrega y arranque</h3><p>Recibes archivos y manual listos. Te acompaño en las primeras semanas de uso.</p><ul><li>Archivos y manual de marca</li><li>Soporte posterior</li></ul></section>
+
+      </div>
+    </div>
+    <p class="proc-note rv"><span class="dot"></span>Con identidad expresa, el diagnóstico y la estrategia se condensan en una sola semana.</p>
+
+    <div class="before">
+      <div class="condw rv">
+        <h3>Condiciones de <em>trabajo</em></h3>
+        <ul class="cnd">
+          <li><span class="mono">Pago</span><div><b>Inicio con 50% y saldo al entregar.</b><span>Transferencia bancaria, Yape o Plin. Compromiso de ambas partes desde el primer día.</span></div></li>
+          <li><span class="mono">Revisiones</span><div><b>Dos rondas incluidas en cada identidad.</b><span>Los cambios posteriores se cotizan. Un camino fundamentado, no veinte opciones.</span></div></li>
+          <li><span class="mono">Plazos</span><div><b>Corren desde la aprobación del brief.</b><span>El brief aprobado marca el punto de partida real.</span></div></li>
+          <li><span class="mono">Alcance</span><div><b>Impresión, producción, dominio y hosting van aparte.</b><span>El alcance final se confirma por escrito. Sabes qué recibes y cuánto cuesta antes de empezar.</span></div></li>
+        </ul>
+      </div>
+      <div class="faq rv d1">
+        <h3>Preguntas <em>frecuentes</em></h3>
+        <details><summary>¿Cómo nos comunicamos durante el proyecto?<i aria-hidden="true"></i></summary><p>Empezamos con una reunión de descubrimiento y seguimos por WhatsApp, Gmail o Google Meet, con avances en las fechas acordadas.</p></details>
+        <details><summary>¿Qué pasa si necesito cambios después de la entrega?<i aria-hidden="true"></i></summary><p>Las dos rondas de revisión cubren el proceso. Los cambios posteriores se cotizan según su alcance.</p></details>
+        <details><summary>¿Puedo contratar solo un servicio adicional?<i aria-hidden="true"></i></summary><p>Sí. Cada adicional se cotiza por separado. Si ya tienes manual, parto de él; si no, adapto el diseño a tu estilo actual o a uno que funcione para tu marca.</p></details>
+        <details><summary>¿Trabajas con marcas que ya existen?<i aria-hidden="true"></i></summary><p>Sí. En un rebranding empiezo por el diagnóstico: conservo lo que funciona y reemplazo lo que frena a tu marca.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 · CONTACTO ============ -->
+<section class="sec" id="contacto" data-theme="accent" data-note="Contacto · Un CTA fuerte (correo y brief). Datos tomados de tu documento de servicios. El formulario valida el correo; no está conectado a ningún servicio.">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="lab mono"><b>06</b> Siguiente paso</span>
+      <h2>Avísame <em>cómo seguir</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-copy">
+        <div class="rv">
+          <p class="q">Tu marca merece ser <span class="ital">indomable.</span> Yo sé cómo hacerlo.</p>
+          <p class="lead">Cuéntame qué quieres construir y para quién. Te respondo con un camino fundamentado, con alcance y precio claros antes de empezar.</p>
+        </div>
+        <div class="rv d1" style="display:flex;flex-direction:column;gap:1.4rem">
+          <div class="ct-row">
+            <a class="mail" href="mailto:pablohuamanijustiniano@gmail.com" id="mail">pablohuamanijustiniano@gmail.com</a>
+            <button class="pill" type="button" id="copyMail" aria-label="Copiar correo"><svg class="ic" style="width:1rem;height:1rem"><use href="#i-copy"/></svg>Copiar</button>
+          </div>
+          <ul class="socials" aria-label="Enlaces profesionales">
+            <li><a class="pill" href="https://instagram.com/pablo__huamani2" rel="noopener">Instagram @pablo__huamani2 <svg class="ic"><use href="#i-ext"/></svg></a></li>
+            <li><a class="pill" href="https://portafoliopablohuamanij.com" rel="noopener">portafoliopablohuamanij.com <svg class="ic"><use href="#i-ext"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="form-card cut rv d2" id="formCard">
+        <h3>Envíame tu <em>brief</em></h3>
+        <form id="form" novalidate>
+          <fieldset><legend>¿Qué necesitas?</legend>
+            <div class="opts" id="opts">
+              <label><input type="checkbox" name="t" value="Branding"><span>Identidad de marca</span></label>
+              <label><input type="checkbox" name="t" value="Social"><span>Social media</span></label>
+              <label><input type="checkbox" name="t" value="Packaging"><span>Packaging</span></label>
+              <label><input type="checkbox" name="t" value="Print"><span>Papelería y print</span></label>
+              <label><input type="checkbox" name="t" value="Web"><span>Web / UI</span></label>
+            </div>
+          </fieldset>
+          <div class="f" id="fMail"><label class="t" for="email">Tu correo</label><input type="email" id="email" name="email" placeholder="tu@marca.com" autocomplete="email" aria-describedby="mailErr"><p class="msg" id="mailErr">Escribe un correo válido para poder responderte.</p></div>
+          <div class="f"><label class="t" for="msg">Cuéntame tu proyecto</label><textarea id="msg" name="msg" placeholder="Qué marca eres, qué quieres lograr y para cuándo."></textarea></div>
+          <button class="btn btn-c" type="submit" style="align-self:flex-start">Enviar brief <span class="ar"><svg class="ic"><use href="#i-arrow"/></svg></span></button>
+          <p class="small">Respondo en un máximo de 48 horas hábiles.</p>
+        </form>
+        <div class="form-ok" role="status">
+          <span class="chk"><svg class="ic" style="stroke:var(--c)"><use href="#i-check"/></svg></span>
+          <h3>Brief recibido</h3>
+          <p>Gracias. Lo reviso con calma y te respondo con el siguiente paso.</p>
+          <button class="btn btn-o" type="button" id="again">Enviar otro</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer data-theme="dark" data-note="Footer · Firma visual, navegación secundaria, contacto y copyright.">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a class="logo" href="#inicio" aria-label="Pablo Huamani, volver al inicio"><svg viewBox="0 0 400.00 80.36"><use href="#logo"/></svg></a>
+        <p>Diseño <em>indomable</em> para marcas que no piden permiso</p>
+      </div>
+      <nav class="f-col f-nav" aria-label="Navegación secundaria"><h4>Navegar</h4><ul><li><a href="#proyectos">Proyectos</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#sobre-mi">Sobre mí</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
+      <div class="f-col"><h4>Redes</h4><ul><li><a href="https://instagram.com/pablo__huamani2" rel="noopener">Instagram</a></li><li><a href="https://portafoliopablohuamanij.com" rel="noopener">Portafolio</a></li></ul></div>
+      <div class="f-col"><h4>Escríbeme</h4><ul><li><a href="mailto:pablohuamanijustiniano@gmail.com">Correo</a></li><li><a href="#servicios">Tarifas 2026</a></li></ul></div>
+    </div>
+    <div class="f-strip" aria-hidden="true"><svg viewBox="0 0 96.20 80.36"><use href="#iso"/></svg></div>
+    <div class="f-bottom"><span>© 2026 Pablo Huamani. Todos los derechos reservados.</span><a class="up" href="#inicio">Volver arriba <svg class="ic"><use href="#i-up"/></svg></a></div>
+  </div>
+</footer>
+
+<div class="tools" role="group" aria-label="Herramientas del wireframe">
+  <button type="button" id="tNotes" aria-pressed="false"><i></i>Anotaciones<span class="long"> UX</span></button>
+  <button type="button" id="tGrid" aria-pressed="false"><i></i>Retícula<span class="long"> 12 col</span></button>
+</div>
+<div class="gridov" aria-hidden="true"><div class="wrap"><div class="cols"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+'use strict';
+var $=function(s,c){return (c||document).querySelector(s)};
+var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var PROJECTS={rebeldia:{"cat": "Branding", "title": "Rebeldía <em>Grid</em>", "year": "2026", "role": "Dirección de arte y diseño", "del": "Identidad, sistema gráfico, manual", "reto": "Construir una identidad con criterio propio en un mercado saturado de fórmulas seguras.", "sol": "Partí de una retícula modular y la desarmé: cada pieza nace del sistema y se rompe con una razón estratégica.", "kpi": [["00%", "Reconocimiento de marca"], ["00", "Piezas del sistema"], ["00 días", "Entrega"]]},
+override:{"cat": "Branding · Publicidad", "title": "<em>OVER</em>RIDE", "year": "2026", "role": "Branding y comunicación visual", "del": "Logotipo, sistema visual, piezas sociales", "reto": "Posicionar una propuesta de soluciones de marca frente a competidores que se ven todos iguales.", "sol": "Un lenguaje de bloques cortados a 45° y un tono contundente que convierte la diferencia en identidad.", "kpi": [["00%", "Alcance orgánico"], ["00", "Plantillas sociales"], ["00%", "Consultas nuevas"]]},
+datapulse:{"cat": "UI / UX", "title": "Data <em>Pulse</em>", "year": "2026", "role": "Diseño de producto", "del": "Research, wireframes, sistema UI, prototipo", "reto": "Un equipo con datos dispersos que tardaba demasiado en decidir qué hacer con ellos.", "sol": "Jerarquía visual por prioridad de decisión: pocos indicadores, estados claros y una sola acción por pantalla.", "kpi": [["00%", "Menos tiempo de lectura"], ["00", "Componentes UI"], ["0.0", "Puntaje de usabilidad"]]},
+bees:{"cat": "Publicidad · Comunicación", "title": "Distribuidores <em>estratégicos</em>", "year": "2026", "role": "Diseño de presentaciones", "del": "Sistema de láminas, pirámide, plantillas", "reto": "Explicar una estrategia en tres niveles a una audiencia de distribuidores sin perder a nadie en la lectura.", "sol": "Una pirámide de tres partes con jerarquía tipográfica estricta y un solo mensaje por lámina.", "kpi": [["00", "Láminas del sistema"], ["3", "Niveles de lectura"], ["00%", "Comprensión"]]},
+kallpa:{"cat": "Diseño web", "title": "Landing <em>Kallpa</em>", "year": "2026", "role": "Diseño y desarrollo front", "del": "Arquitectura, UI, landing responsive", "reto": "Convertir visitas en cotizaciones con una página que hasta entonces solo informaba.", "sol": "Una estructura de una sola decisión por pantalla, llamadas a la acción únicas y medición desde el primer día.", "kpi": [["00%", "Conversión"], ["0.0s", "Carga"], ["00%", "Rebote menos"]]},
+chala:{"cat": "Packaging · Piezas gráficas", "title": "Caja <em>Chala</em>", "year": "2026", "role": "Diseño de packaging", "del": "Estructura, etiqueta, piezas impresas", "reto": "Un producto de calidad que desaparecía en el estante junto a marcas más grandes.", "sol": "Un empaque con contraste máximo, una etiqueta tipográfica clara y un acento de color que se lee a tres metros.", "kpi": [["00%", "Rotación en punto de venta"], ["00", "Piezas del sistema"], ["00%", "Recordación"]]}};
+
+/* ---------- Navegación: tema por sección, enlace activo, riel y progreso ---------- */
+var nav=$('#nav'),secs=$$('main > section[id]'),links=$$('.nav ul a'),rail=$$('#rail a');
+function pick(y){var cur=null;secs.concat([$('footer')]).forEach(function(s){var r=s.getBoundingClientRect();if(r.top<=y&&r.bottom>y)cur=s});return cur}
+function onScroll(){
+  var under=pick(46),active=pick(Math.min(innerHeight*.4,260));
+  if(under)nav.dataset.theme=under.dataset.theme||'dark';
+  [links,rail].forEach(function(set){set.forEach(function(a){a.removeAttribute('aria-current');if(active&&active.id&&a.getAttribute('href')==='#'+active.id)a.setAttribute('aria-current','true')})});
+  var max=document.documentElement.scrollHeight-innerHeight;
+  document.documentElement.style.setProperty('--prog',max>0?Math.min(1,scrollY/max).toFixed(4):0);
+}
+var tk=false;window.addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(function(){onScroll();tk=false})}},{passive:true});
+onScroll();
+
+var burger=$('#burger'),menu=$('#menu');
+function toggleMenu(open){burger.setAttribute('aria-expanded',open);menu.hidden=!open;burger.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');burger.firstElementChild.firstElementChild.setAttribute('href',open?'#i-x':'#i-menu');document.body.style.overflow=open?'hidden':'';if(open)nav.dataset.theme='dark'}
+burger.addEventListener('click',function(){toggleMenu(menu.hidden)});
+$$('#menu a').forEach(function(a){a.addEventListener('click',function(){toggleMenu(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden)toggleMenu(false)});
+
+/* ---------- Revelado ---------- */
+var io=null;
+if('IntersectionObserver' in window){
+  io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+  $$('.rv').forEach(function(el){io.observe(el)});
+}else{$$('.rv').forEach(function(el){el.classList.add('in')})}
+
+/* ---------- El hilo: se calcula a partir de la posición real de los nodos ---------- */
+function buildThread(el){
+  var svg=$('svg.thread',el);if(!svg||getComputedStyle(svg).display==='none')return;
+  var nodes=$$('.nodo',el),er=el.getBoundingClientRect(),t=+el.dataset.tangle;
+  var pts=nodes.map(function(n){var r=n.getBoundingClientRect();return{x:r.left+r.width/2-er.left,y:r.top+r.height/2-er.top}});
+  var y=pts[0].y,x0=-er.left,xe=er.width;
+  var a=pts[t].x,w=pts[t+1].x-a,sx=w/288,k=Math.min(1,sx);
+  var P=function(dx,dy){return (a+dx*sx).toFixed(1)+' '+(y-dy*k).toFixed(1)};
+  var d='M'+x0.toFixed(1)+' '+y+' L'+a.toFixed(1)+' '+y+
+   ' C'+P(40,0)+' '+P(50,108)+' '+P(106,108)+
+   ' C'+P(162,108)+' '+P(148,20)+' '+P(108,20)+
+   ' C'+P(64,20)+' '+P(100,130)+' '+P(170,114)+
+   ' C'+P(230,100)+' '+P(210,0)+' '+P(288,0)+
+   ' L'+xe.toFixed(1)+' '+y;
+  $('.hebra',svg).setAttribute('d',d);
+  var b=$('.base',svg);b.setAttribute('x1',x0);b.setAttribute('x2',xe);b.setAttribute('y1',y);b.setAttribute('y2',y);
+  var p=$('.punta',svg);p.setAttribute('cx',xe-14);p.setAttribute('cy',y);
+}
+var hilos=$$('.hilo');
+function rebuild(){hilos.forEach(buildThread)}
+rebuild();window.addEventListener('resize',rebuild);window.addEventListener('load',rebuild);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(rebuild);
+if('IntersectionObserver' in window){
+  var hio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('go');hio.unobserve(e.target)}})},{threshold:.25});
+  hilos.forEach(function(h){hio.observe(h)});
+}else{hilos.forEach(function(h){h.classList.add('go')})}
+
+/* ---------- Portafolio: filtros, vista previa y detalle ---------- */
+var rows=$$('#idx li'),btns=$$('#idx .row'),svgs=$$('#prev .art svg'),cnt=$('#cnt');
+function setPrev(id){
+  svgs.forEach(function(s){s.classList.toggle('on',s.dataset.id===id)});
+  btns.forEach(function(b){b.classList.toggle('on',b.dataset.id===id)});
+  var p=PROJECTS[id];$('#prevName').textContent=p.title.replace(/<[^>]+>/g,'');$('#prevCat').textContent=p.cat;
+}
+btns.forEach(function(b){['mouseenter','focus'].forEach(function(ev){b.addEventListener(ev,function(){setPrev(b.dataset.id)})})});
+setPrev(btns[0].dataset.id);
+$$('.filters [data-f]').forEach(function(b){b.addEventListener('click',function(){
+  var f=b.dataset.f,n=0,first=null;
+  $$('.filters [data-f]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+  rows.forEach(function(r){var ok=f==='todos'||r.dataset.cat.split(' ').indexOf(f)>-1;r.classList.toggle('is-out',!ok);if(ok){n++;if(!first)first=r.dataset.id}});
+  cnt.textContent=(n<10?'0':'')+n;if(first)setPrev(first);
+})});
+var dlg=$('#case'),lastBtn=null;
+function visible(){return rows.filter(function(r){return !r.classList.contains('is-out')})}
+function openCase(id){
+  var p=PROJECTS[id];
+  $('#caseArt').innerHTML=$('#prev svg[data-id="'+id+'"]').outerHTML.replace(' class="on"','');
+  $('#caseCat').textContent=p.cat;$('#caseTitle').innerHTML=p.title;
+  $('#caseYear').textContent=p.year;$('#caseRole').textContent=p.role;$('#caseDel').textContent=p.del;
+  $('#caseReto').textContent=p.reto;$('#caseSol').textContent=p.sol;
+  $('#caseKpi').innerHTML=p.kpi.map(function(k){return '<div><b>'+k[0]+'</b><span>'+k[1]+'</span></div>'}).join('');
+  dlg.dataset.id=id;if(!dlg.open){dlg.showModal();document.body.style.overflow='hidden'}dlg.scrollTop=0;
+}
+function stepCase(d){var v=visible(),i=v.findIndex(function(c){return c.dataset.id===dlg.dataset.id});openCase(v[(i+d+v.length)%v.length].dataset.id)}
+btns.forEach(function(b){b.addEventListener('click',function(){lastBtn=b;openCase(b.dataset.id)})});
+$('#caseClose').addEventListener('click',function(){dlg.close()});
+$('#casePrev').addEventListener('click',function(){stepCase(-1)});$('#caseNext').addEventListener('click',function(){stepCase(1)});
+dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+dlg.addEventListener('close',function(){document.body.style.overflow='';if(lastBtn)lastBtn.focus()});
+
+/* ---------- Servicios: moneda ---------- */
+var cur='pen';
+function paint(){$$('.pr').forEach(function(p){var main=cur==='pen'?p.dataset.pen:p.dataset.usd,alt=cur==='pen'?p.dataset.usd:p.dataset.pen;$('.m',p).textContent=main;$('.a',p).textContent='≈ '+alt})}
+$$('.cur button').forEach(function(b){b.addEventListener('click',function(){cur=b.dataset.cur;$$('.cur button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});paint()})});
+paint();
+$$('[data-pick]').forEach(function(a){a.addEventListener('click',function(){var i=$('#opts input[value="'+a.dataset.pick+'"]');if(i)i.checked=true})});
+
+/* ---------- FAQ: una abierta a la vez ---------- */
+var det=$$('details');det.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)det.forEach(function(o){if(o!==d)o.open=false})})});
+
+/* ---------- Contacto ---------- */
+var toast=$('#toast'),tt;
+function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on')},2200)}
+$('#copyMail').addEventListener('click',function(){var m=$('#mail').textContent;try{navigator.clipboard.writeText(m).then(function(){say('Correo copiado')},function(){say(m)})}catch(e){say(m)}});
+var form=$('#form'),fMail=$('#fMail'),em=$('#email'),RX=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+form.addEventListener('submit',function(e){e.preventDefault();var ok=RX.test(em.value.trim());fMail.classList.toggle('err',!ok);em.setAttribute('aria-invalid',!ok);if(!ok){em.focus();return}$('#formCard').classList.add('sent')});
+em.addEventListener('input',function(){if(fMail.classList.contains('err')&&RX.test(em.value.trim())){fMail.classList.remove('err');em.setAttribute('aria-invalid','false')}});
+$('#again').addEventListener('click',function(){form.reset();$('#formCard').classList.remove('sent')});
+
+/* ---------- Herramientas de wireframe ---------- */
+$$('[data-note]').forEach(function(s,i){var n=document.createElement('div');n.className='note';n.setAttribute('aria-hidden','true');n.innerHTML='<b>Sección 0'+(i+1)+'</b>'+s.dataset.note;s.style.position='relative';s.insertBefore(n,s.firstChild)});
+function tog(btn,cls){btn.addEventListener('click',function(){var on=btn.getAttribute('aria-pressed')!=='true';btn.setAttribute('aria-pressed',on);document.body.classList.toggle(cls,on)})}
+tog($('#tNotes'),'show-notes');tog($('#tGrid'),'show-grid');
+})();
+</script>
+</body>
+</html>
